@@ -1,0 +1,19 @@
+{
+    "name": "MrBones",
+    "rootNamespace": "",
+    "references": [
+        "Cinemachine",
+        "Nebby.CSharpUtils",
+        "Nebby.UnityUtils.Runtime",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

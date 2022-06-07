@@ -1,0 +1,18 @@
+{
+    "name": "Nebby.UnityUtils.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:08a9467597375a344a1062389773e861"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,7 +2,8 @@
     "name": "Nebby.UnityUtils.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:08a9467597375a344a1062389773e861"
+        "Nebby.UnityUtils.Runtime",
+        "Nebby.CSharpUtils"
     ],
     "includePlatforms": [
         "Editor"

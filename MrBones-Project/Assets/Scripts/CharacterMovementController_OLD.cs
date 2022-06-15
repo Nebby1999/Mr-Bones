@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
+using Nebby.CSharpUtils;
 
 namespace MrBones
 {
-    public class CharacterMovementController : MonoBehaviour
+    public class CharacterMovementController_OLD : MonoBehaviour
     {
         [Range(0, 0.3f)]
         public float movementSmoothing = 0.05f;
@@ -28,7 +33,7 @@ namespace MrBones
             _grounded = false;
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, _groundedRadius, _groundLayers);
-            for (int i = 0; i < colliders.Length; i++)
+            for(int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
                 {
@@ -47,10 +52,11 @@ namespace MrBones
 
             RigidBody2D.velocity = new Vector2(xVelocity, yVelocity);
         }
+
         private float CalculateVelocity(float max, float current)
         {
             bool shouldReturnNegative = false;
-
+            
             //Both current and max are negative? return a negative value
             if (current < 0 && max > 0)
                 shouldReturnNegative = true;
@@ -58,13 +64,19 @@ namespace MrBones
             float newVelocity = Mathf.Min(Mathf.Abs(max), Mathf.Abs(current));
             return shouldReturnNegative ? -newVelocity : newVelocity;
         }
-        public void PlayerMovement(Vector2 direction)
+        public void NewMove(Vector2 direction)
         {
             RigidBody2D.AddForce(new Vector2(direction.x, 0));
+            /*if(_grounded || hasAirControl)
+            {
+                RigidBody2D.AddForce(new Vector2(direction.x, 0));
+            }*/
         }
-        public void JetpackBoost(Vector2 direction, float strength)
+
+        public void Recoil(Vector2 recoilDirection, float recoilStrength)
         {
-            RigidBody2D.AddForce(-direction * strength, ForceMode2D.Force);
+            var flippedVector2 = -recoilDirection;
+            RigidBody2D.AddForce(flippedVector2 * recoilStrength, ForceMode2D.Impulse);
         }
     }
 }

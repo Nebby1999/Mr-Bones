@@ -15,6 +15,8 @@ namespace MrBones
 
         public void OnFire(InputAction.CallbackContext context) => playerController.HandleFire(context);
 
+        public void OnCharge(InputAction.CallbackContext context) => playerController.HandleCharge(context);
+
         public void OnInteract(InputAction.CallbackContext context) => playerController.HandleInteraction(context);
     }
 }

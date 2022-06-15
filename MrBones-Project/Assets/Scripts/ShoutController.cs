@@ -1,45 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Nebby.UnityUtils;
 using UnityEngine.InputSystem;
-using UnityEngine.Events;
 
-public class ShoutController : MonoBehaviour
+namespace MrBones
 {
-    public GameObject shoutPrefab;
-    public FloatReference shoutMaxCooldown;
-    public FloatReference shoutCooldown;
-    public float strength;
-    public float strengthCoefficient;
-    [Tooltip("Ran when the shout has completed.")]
-    public UnityEvent<Vector2, float> OnShout;
-
-
-    public void HandleShoutProcess(InputAction.CallbackContext context, Vector2 lookVector)
+    public class ShoutController : MonoBehaviour
     {
-        switch(context.phase)
+        public enum States
         {
-            case InputActionPhase.Started:
-                break;
-            case InputActionPhase.Performed:
-                strength = Mathf.Max(context.ReadValue<float>(), strength);
-                break;
-            case InputActionPhase.Canceled:
-                Shout(lookVector);
-                strength = 0;
-                break;
+            Idle,
+            Jetpack,
+            Charge
+        }
+
+        public ParticleSystem shoutParticles;
+        public States currentState;
+        public CharacterMovementController charMovementController;
+
+
+        public float strength;
+        public float jetpackStrength;
+        public float chargeStrength;
+        public float maxChargeStrength;
+        public Vector2 lookDirection;
+
+        private void Awake()
+        {
+            if (!shoutParticles)
+                shoutParticles.GetComponent<ParticleSystem>();
+        }
+        public void Update()
+        {
+            UpdateParticleSystem();
+        }
+        private void FixedUpdate()
+        {
+            switch(currentState)
+            {
+                case States.Jetpack:
+                    JetpackState();
+                    break;
+            }
+        }
+
+        private void UpdateParticleSystem()
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, lookDirection);
+            shoutParticles.transform.rotation = lookRotation;
+
+            var emission = shoutParticles.emission;
+            emission.rateOverTime = strength * 10;
+        }
+        public void HandleShoutProcess(InputAction.CallbackContext callbackContext, bool isCharging)
+        {
+            strength = callbackContext.ReadValue<float>();
+
+            if (callbackContext.canceled)
+            {
+                currentState = States.Idle;
+                return;
+            }
+
+
+            currentState = isCharging ? States.Charge : States.Jetpack;
+        }
+
+        private void JetpackState()
+        {
+            charMovementController.JetpackBoost(lookDirection, strength * jetpackStrength);
+        }
+
+        private void ChargeState()
+        {
+
         }
     }
 
-    private void Shout(Vector2 direction)
-    {
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        var shoutProjectile = Instantiate(shoutPrefab, transform.position, transform.rotation);
-        var component = shoutProjectile.GetComponent<ShoutProjectile>();
-        component.direction = direction == Vector2.zero ? Vector2.right : direction;
-        float finalStrength = strength * strengthCoefficient;
-        component.speed = finalStrength;
-        OnShout?.Invoke(direction, finalStrength);
-    }
 }

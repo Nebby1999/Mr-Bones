@@ -17,10 +17,10 @@ namespace MrBones
         public CharacterMovementController CharacterMovementController { get; private set; }
         public ShoutController ShoutController { get; private set; }
 
-        public Vector2 movementControl;
-        public Vector2 lookControl;
-        public float fireControl;
-        public bool isCharging;
+        private Vector2 movementControl;
+        private Vector2 lookControl;
+        private float fireControl;
+        private bool isCharging;
 
         private void Awake()
         {

@@ -14,22 +14,21 @@ namespace MrBones
             Charge
         }
 
-        public ParticleSystem shoutParticles;
+        public ShoutParticleController shoutParticleController;
         public States currentState;
         public CharacterMovementController charMovementController;
 
 
         public float strength;
-        public float jetpackStrength;
+        public float jetpackCoefficient;
         public float chargeStrength;
         public float maxChargeStrength;
         public Vector2 lookDirection;
 
         private void Awake()
         {
-            if (!shoutParticles)
-                shoutParticles.GetComponent<ParticleSystem>();
         }
+
         public void Update()
         {
             UpdateParticleSystem();
@@ -47,10 +46,24 @@ namespace MrBones
         private void UpdateParticleSystem()
         {
             Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, lookDirection);
-            shoutParticles.transform.rotation = lookRotation;
+            shoutParticleController.transform.rotation = lookRotation;
 
-            var emission = shoutParticles.emission;
+            switch(currentState)
+            {
+                case States.Jetpack:
+                    JetpackUpdate(shoutParticleController.jetpackSystem);
+                    break;
+                case States.Charge:
+                    ChargeUpdate(shoutParticleController);
+                    break;
+            }
+            var emission = shoutParticleController.emission;
             emission.rateOverTime = strength * 10;
+        }
+
+        private void JetpackUpdate()
+        {
+
         }
         public void HandleShoutProcess(InputAction.CallbackContext callbackContext, bool isCharging)
         {
@@ -68,7 +81,7 @@ namespace MrBones
 
         private void JetpackState()
         {
-            charMovementController.JetpackBoost(lookDirection, strength * jetpackStrength);
+            charMovementController.JetpackBoost(lookDirection, strength * jetpackCoefficient);
         }
 
         private void ChargeState()

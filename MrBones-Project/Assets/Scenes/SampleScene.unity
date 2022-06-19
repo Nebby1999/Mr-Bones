@@ -925,6 +925,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &1211470763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211470764}
+  m_Layer: 6
+  m_Name: ShoutParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1211470764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211470763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1628176526}
+  m_Father: {fileID: 1852659011591915270}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1628176525
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +969,7 @@ GameObject:
   - component: {fileID: 1628176528}
   - component: {fileID: 1628176527}
   m_Layer: 6
-  m_Name: shoutParticles
+  m_Name: JetpackParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,13 +982,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628176525}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1852659011591915270}
-  m_RootOrder: 3
+  m_Father: {fileID: 1211470764}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1628176527
 ParticleSystemRenderer:
@@ -5972,7 +6004,7 @@ Transform:
   - {fileID: 1852659012842106753}
   - {fileID: 1852659012268007124}
   - {fileID: 1852659012302916848}
-  - {fileID: 1628176526}
+  - {fileID: 1211470764}
   m_Father: {fileID: 1852659012713589272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6253,10 +6285,6 @@ MonoBehaviour:
     assetReference: {fileID: 0}
     useConstant: 1
   shoutIndicatorPrefab: {fileID: 1852659012302916855}
-  movementControl: {x: 0, y: 0}
-  lookControl: {x: 0, y: 0}
-  fireControl: 0
-  isCharging: 0
 --- !u!61 &1852659012713589278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6320,7 +6348,7 @@ MonoBehaviour:
   currentState: 0
   charMovementController: {fileID: 1852659012713589281}
   strength: 0
-  jetpackStrength: 50
+  jetpackCoefficient: 50
   chargeStrength: 50
   maxChargeStrength: 0
   lookDirection: {x: 0, y: 0}

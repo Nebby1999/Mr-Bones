@@ -58,10 +58,12 @@ namespace MrBones
             float newVelocity = Mathf.Min(Mathf.Abs(max), Mathf.Abs(current));
             return shouldReturnNegative ? -newVelocity : newVelocity;
         }
+
         public void PlayerMovement(Vector2 direction)
         {
             RigidBody2D.AddForce(new Vector2(direction.x, 0));
         }
+
         public void JetpackBoost(Vector2 direction, float strength)
         {
             RigidBody2D.AddForce(-direction * strength, ForceMode2D.Force);

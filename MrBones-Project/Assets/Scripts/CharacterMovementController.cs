@@ -68,5 +68,10 @@ namespace MrBones
         {
             RigidBody2D.AddForce(-direction * strength, ForceMode2D.Force);
         }
+
+        public void Burst(Vector2 direction, float strength)
+        {
+            RigidBody2D.AddForce(-direction * strength, ForceMode2D.Impulse);
+        }
     }
 }

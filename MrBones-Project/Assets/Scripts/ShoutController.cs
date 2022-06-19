@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace MrBones
@@ -11,28 +12,27 @@ namespace MrBones
         {
             Idle,
             Jetpack,
-            Charge
+            Charge,
+            Burst
         }
 
         public ShoutParticleController shoutParticleController;
         public States currentState;
         public CharacterMovementController charMovementController;
-
-
-        public float strength;
         public float jetpackCoefficient;
-        public float chargeStrength;
         public float maxChargeStrength;
-        public Vector2 lookDirection;
+        public UnityEvent OnBurst;
+        public Vector2 LookDirection { get; set; }
 
-        private void Awake()
+        private float strength;
+        private float chargeStrength;
+
+        private void Update()
         {
+            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, LookDirection);
+            shoutParticleController.transform.rotation = lookRotation;
         }
 
-        public void Update()
-        {
-            UpdateParticleSystem();
-        }
         private void FixedUpdate()
         {
             switch(currentState)
@@ -40,53 +40,51 @@ namespace MrBones
                 case States.Jetpack:
                     JetpackState();
                     break;
-            }
-        }
-
-        private void UpdateParticleSystem()
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, lookDirection);
-            shoutParticleController.transform.rotation = lookRotation;
-
-            switch(currentState)
-            {
-                case States.Jetpack:
-                    JetpackUpdate(shoutParticleController.jetpackSystem);
-                    break;
                 case States.Charge:
-                    ChargeUpdate(shoutParticleController);
+                    ChargeState();
+                    break;
+                case States.Burst:
+                    Burst();
                     break;
             }
-            var emission = shoutParticleController.emission;
-            emission.rateOverTime = strength * 10;
-        }
-
-        private void JetpackUpdate()
-        {
-
         }
         public void HandleShoutProcess(InputAction.CallbackContext callbackContext, bool isCharging)
         {
             strength = callbackContext.ReadValue<float>();
 
+            bool isChargingOrInChargeState = (isCharging || currentState == States.Charge);
+
+            if(!isChargingOrInChargeState)
+                shoutParticleController.strengthEmission = strength;
+            
             if (callbackContext.canceled)
             {
-                currentState = States.Idle;
+                currentState = isChargingOrInChargeState ? States.Burst : States.Idle;
                 return;
             }
 
 
-            currentState = isCharging ? States.Charge : States.Jetpack;
+            currentState = isChargingOrInChargeState ? States.Charge : States.Jetpack;
         }
 
         private void JetpackState()
         {
-            charMovementController.JetpackBoost(lookDirection, strength * jetpackCoefficient);
+            charMovementController.JetpackBoost(LookDirection, strength * jetpackCoefficient);
         }
 
         private void ChargeState()
         {
+            chargeStrength += Time.fixedDeltaTime * 20;
+            if (chargeStrength > maxChargeStrength)
+                chargeStrength = maxChargeStrength;
+        }
 
+        private void Burst()
+        {
+            currentState = States.Idle;
+            charMovementController.Burst(LookDirection, chargeStrength);
+            chargeStrength = 0;
+            OnBurst?.Invoke();
         }
     }
 

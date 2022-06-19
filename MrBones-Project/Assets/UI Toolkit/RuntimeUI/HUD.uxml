@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/RuntimeUI/HUD.uss?fileID=7433441132597879392&amp;guid=655d30fcffda46c4490da52cfacb8c69&amp;type=3#HUD" />
+    <ui:VisualElement style="bottom: -50%; position: relative; width: 20%; height: 50%; align-items: stretch; justify-content: center;">
+        <ui:ProgressBar title="my-progress" low-value="7.42" style="rotate: -90deg;" />
+    </ui:VisualElement>
+</ui:UXML>

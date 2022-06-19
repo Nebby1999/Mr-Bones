@@ -38,7 +38,7 @@ namespace MrBones
             if (shoutIndicatorPrefab)
                 UpdateShoutIndicator();
 
-            ShoutController.lookDirection = lookControl;
+            ShoutController.LookDirection = lookControl;
         }
 
         public void UpdateShoutIndicator()

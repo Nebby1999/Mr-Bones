@@ -9,8 +9,7 @@ namespace MrBones
         public float movementSmoothing = 0.05f;
         [SerializeField] private LayerMask _groundLayers;
         [SerializeField] private Transform _groundCheck;
-        [SerializeField] private Vector2 _maxVelocityOnGround;
-        [SerializeField] private Vector2 _maxVelocityOnAir;
+        [SerializeField] private Vector2 _maxVelocity;
         private const float _groundedRadius = 0.2f;
         private const float _ceilingRadius = 0.2f;
         public bool _grounded;
@@ -41,9 +40,8 @@ namespace MrBones
 
         private void SetVelocity()
         {
-            var chosenMaxVelocity = _grounded ? _maxVelocityOnGround : _maxVelocityOnAir;
-            float yVelocity = CalculateVelocity(chosenMaxVelocity.y, RigidBody2D.velocity.y);
-            float xVelocity = CalculateVelocity(chosenMaxVelocity.x, RigidBody2D.velocity.x);
+            float yVelocity = CalculateVelocity(_maxVelocity.y, RigidBody2D.velocity.y);
+            float xVelocity = CalculateVelocity(_maxVelocity.x, RigidBody2D.velocity.x);
 
             RigidBody2D.velocity = new Vector2(xVelocity, yVelocity);
         }

@@ -15,6 +15,7 @@ namespace MrBones
         /*public CharacterMovementController_OLD CharacterMovementController { get; private set; }
         public ShoutController_OLD ShoutController { get; private set; }*/
         public CharacterMovementController CharacterMovementController { get; private set; }
+        public MrBonesAnimatorController AnimatorController { get; private set; }
         public ShoutController ShoutController { get; private set; }
 
         private Vector2 movementControl;
@@ -26,6 +27,7 @@ namespace MrBones
         {
             CharacterMovementController = GetComponent<CharacterMovementController>();
             ShoutController = GetComponent<ShoutController>();
+            AnimatorController = GetComponent<MrBonesAnimatorController>();
         }
 
         public void FixedUpdate()
@@ -39,6 +41,7 @@ namespace MrBones
                 UpdateShoutIndicator();
 
             ShoutController.LookDirection = lookControl;
+            AnimatorController.ScreamParam = fireControl;
         }
 
         public void UpdateShoutIndicator()

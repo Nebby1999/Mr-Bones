@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="InspectorDataContainer">
+        <uie:PropertyField name="clip" binding-path="clip" />
+        <uie:PropertyField name="looping" binding-path="looping" />
+        <ui:VisualElement name="VolumeContainer">
+            <uie:PropertyField name="constantVolume" binding-path="constantVolume" />
+            <uie:PropertyField name="volume" binding-path="volume" />
+        </ui:VisualElement>
+        <ui:VisualElement name="PitchContainer">
+            <uie:PropertyField name="constantPitch" binding-path="constantPitch" />
+            <uie:PropertyField name="pitch" binding-path="pitch" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

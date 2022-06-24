@@ -22,6 +22,8 @@ namespace MrBones
         public float jetpackCoefficient;
         public float maxChargeStrength;
         public UnityEvent OnBurst;
+        public UnityEvent OnConstantScreamStart;
+        public UnityEvent OnConstantScreamEnd;
         public Vector2 LookDirection { get; set; }
 
         private float strength;
@@ -59,12 +61,18 @@ namespace MrBones
             
             if (callbackContext.canceled)
             {
+                if (currentState == States.Jetpack)
+                    OnConstantScreamEnd?.Invoke();
                 currentState = isChargingOrInChargeState ? States.Burst : States.Idle;
                 return;
             }
 
 
             currentState = isChargingOrInChargeState ? States.Charge : States.Jetpack;
+            if(currentState == States.Jetpack && callbackContext.started)
+            {
+                OnConstantScreamStart?.Invoke();
+            }
         }
 
         private void JetpackState()

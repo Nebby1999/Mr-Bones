@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c355a6be748844a8edb1720e5d92e8, type: 3}
+  m_Name: Scream3
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ee07ee4a8827c2f4bb5cecc8a4698689, type: 3}
+  looping: 1
+  volume:
+    min: 1
+    max: 10
+    minLimit: 1
+    maxLimit: 1
+  pitch:
+    min: 1.1769547
+    max: 1.777778
+    minLimit: 1
+    maxLimit: 2
+  constantVolume: 1
+  constantPitch: 1
+  audioSource: {fileID: 0}
+  volumeIsConstant: 1
+  pitchIsConstant: 0

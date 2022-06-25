@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Nebby.UnityUtils;
+using MrBones.Pickups;
+using UnityEngine.Events;
 
 namespace MrBones
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IPickupCollector
     {
+        [Header("Calcium Related")]
         public FloatReference calciumLevel;
-        public FloatReference movementSpeed;
-        public GameObject shoutIndicatorPrefab;
+        public FloatReference maxCalcium;
+        public FloatReference calciumLossPerSecond;
+        public FloatReference calciumLossCoefficient;
+        public UnityEvent OnDeath;
+        public bool Alive { get => calciumLevel.Value > 0; }
+        private bool wasAlive = true;
 
-        /*public CharacterMovementController_OLD CharacterMovementController { get; private set; }
-        public ShoutController_OLD ShoutController { get; private set; }*/
+        [Header("Other")]
+        public FloatReference movementSpeed;
+        public PointerController pointerController;
+        public GameObject jawPrefab;
+
         public CharacterMovementController CharacterMovementController { get; private set; }
         public MrBonesAnimatorController AnimatorController { get; private set; }
         public ShoutController ShoutController { get; private set; }
@@ -33,48 +43,78 @@ namespace MrBones
         public void FixedUpdate()
         {
             CharacterMovementController.PlayerMovement(movementSpeed.Value * Time.fixedDeltaTime * movementControl);
+            calciumLevel.Value -= calciumLossPerSecond.Value * calciumLossCoefficient.Value * Time.fixedDeltaTime;
         }
 
         public void Update()
         {
-            if (shoutIndicatorPrefab)
-                UpdateShoutIndicator();
-
+            pointerController.LookDirection = lookControl;
             ShoutController.LookDirection = lookControl;
             AnimatorController.ScreamParam = fireControl;
+            AnimatorController.IsCharging = ShoutController.currentState == ShoutController.States.Charge;
+
+            AnimatorController.Dead = !Alive;
+            if(!Alive && wasAlive)
+            {
+                wasAlive = false;
+                OnPlayerDeath();
+            }
         }
 
-        public void UpdateShoutIndicator()
+        public bool OnPickupInteraction(GameObject pickupObject, PickupDef pickupDef)
         {
-            shoutIndicatorPrefab.transform.localPosition = new Vector3(lookControl.x, lookControl.y, shoutIndicatorPrefab.transform.localPosition.z);
+            calciumLevel.Value += pickupDef.calciumAmount.Value;
+            if (calciumLevel.Value > maxCalcium.Value)
+                maxCalcium.Value = calciumLevel.Value;
 
-            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, lookControl);
-            shoutIndicatorPrefab.transform.rotation = lookRotation;
+            return true;
+        }
+
+        public void OnBurst(float shoutStrength)
+        {
+            var toDeduct = shoutStrength / 10;
+            calciumLevel.Value -= toDeduct;
+        }
+
+        private void OnPlayerDeath()
+        {
+            Instantiate(jawPrefab, transform.position, transform.rotation);
+            OnDeath?.Invoke();
         }
         #region Input Related
         public void HandleMovement(InputAction.CallbackContext context)
         {
+            if (!Alive)
+                return;
             movementControl = context.ReadValue<Vector2>();
         }
 
         public void HandleLook(InputAction.CallbackContext context)
         {
+            if (!Alive)
+                return;
             lookControl = context.ReadValue<Vector2>();
         }
 
         public void HandleInteraction(InputAction.CallbackContext context)
         {
-
+            if (!Alive)
+                return;
         }
 
         public void HandleCharge(InputAction.CallbackContext context)
         {
+            if (!Alive)
+                return;
             isCharging = context.ReadValueAsButton();
         }
 
         public void HandleFire(InputAction.CallbackContext context)
         {
+            if (!Alive)
+                return;
             fireControl = context.ReadValue<float>();
+            calciumLossCoefficient.Value = 1 + fireControl;
             ShoutController.HandleShoutProcess(context, isCharging);
         }
         #endregion

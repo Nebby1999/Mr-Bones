@@ -59,6 +59,7 @@ namespace MrBones
 
         public void PlayerMovement(Vector2 direction)
         {
+
             RigidBody2D.AddForce(new Vector2(direction.x, 0));
         }
 

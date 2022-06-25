@@ -33,7 +33,6 @@ namespace Nebby.UnityUtils
         public float MaxLimit => maxLimit;
         public float GetRandomRange() 
         {
-            Debug.Log($"Min: {Min} | Max: {Max}");
             return UnityEngine.Random.Range(Min, Max);
         } 
         public float GetRandomRangeLimits() => UnityEngine.Random.Range(MinLimit, MaxLimit);

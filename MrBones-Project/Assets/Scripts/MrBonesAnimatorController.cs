@@ -9,6 +9,8 @@ namespace MrBones
         public Animator animator;
 
         public float ScreamParam { get; set; }
+        public bool IsCharging { get; set; }
+        public bool Dead { get; set; }
         void Start()
         {
         
@@ -18,6 +20,8 @@ namespace MrBones
         void Update()
         {
             animator.SetFloat("Scream", ScreamParam);
+            animator.SetBool("IsCharging", IsCharging);
+            animator.SetBool("Dead", Dead);
         }
     }
 }

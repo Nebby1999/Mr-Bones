@@ -14,7 +14,7 @@ namespace Nebby.UnityUtils.Editor.Core
     //Credits to Passive Picasso! love ya <3
     public static class TemplateHelpers
     {
-        private static bool IsTemplatePath(string path) => path.Contains("Packages/com.passivepicasso.thunderkit");
+        private static bool IsTemplatePath(string path) => path.Contains("Nebby.UnityUtils");
 
         private static readonly Dictionary<string, VisualTreeAsset> templateCache = new Dictionary<string, VisualTreeAsset>(StringComparer.Ordinal);
 

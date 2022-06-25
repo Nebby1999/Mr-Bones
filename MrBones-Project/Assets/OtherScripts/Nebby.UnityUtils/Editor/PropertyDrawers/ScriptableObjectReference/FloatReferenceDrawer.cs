@@ -36,7 +36,6 @@ namespace Nebby.UnityUtils.Editor.PropertyDrawers
                     GenericMenu menu = new GenericMenu();
                     menu.AddItem(new GUIContent($"Use Constant"), usingConstant, () =>
                     {
-                        Debug.Log(usingConstant);
                         SetConstantValue(property, !usingConstant);
                     });
                     menu.ShowAsContext();

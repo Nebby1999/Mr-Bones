@@ -26,7 +26,10 @@ namespace Nebby.UnityUtils
         {
             if (audioSourceManagerObject == null)
             {
-                audioSourceManagerObject = new GameObject();
+                if (audioSource)
+                    audioSourceManagerObject = audioSource.gameObject;
+                else
+                    audioSourceManagerObject = new GameObject();
             }
 
             if (audioSource == null)

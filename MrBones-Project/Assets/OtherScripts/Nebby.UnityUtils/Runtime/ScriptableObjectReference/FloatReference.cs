@@ -27,7 +27,23 @@ namespace Nebby.UnityUtils
                 assetReference.floatValue = value;
             }
         }
-
-        public float Value => useConstant ? constant : assetReference.floatValue;
+        public float Value
+        {
+            get
+            {
+                return useConstant ? constant : assetReference.floatValue;
+            }
+            set
+            {
+                if(useConstant)
+                {
+                    constant = value;
+                }
+                else
+                {
+                    assetReference.floatValue = value;
+                }
+            }
+        }
     }
 }

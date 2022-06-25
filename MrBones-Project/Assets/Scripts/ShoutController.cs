@@ -1,3 +1,4 @@
+using Nebby.UnityUtils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,18 +17,19 @@ namespace MrBones
             Burst
         }
 
-        public ShoutParticleController shoutParticleController;
         public States currentState;
+        public ShoutParticleController shoutParticleController;
         public CharacterMovementController charMovementController;
         public float jetpackCoefficient;
-        public float maxChargeStrength;
-        public UnityEvent OnBurst;
+        [SerializeField] private FloatReference chargeStrength;
+        public FloatReference maxChargeStrength;
+        public UnityEvent OnChargeStart;
+        public UnityEvent<float> OnBurst;
         public UnityEvent OnConstantScreamStart;
         public UnityEvent OnConstantScreamEnd;
         public Vector2 LookDirection { get; set; }
 
         private float strength;
-        private float chargeStrength;
 
         private void Update()
         {
@@ -69,9 +71,17 @@ namespace MrBones
 
 
             currentState = isChargingOrInChargeState ? States.Charge : States.Jetpack;
-            if(currentState == States.Jetpack && callbackContext.started)
+            if(callbackContext.started)
             {
-                OnConstantScreamStart?.Invoke();
+                switch(currentState)
+                {
+                    case States.Jetpack:
+                        OnConstantScreamStart?.Invoke();
+                        break;
+                    case States.Charge:
+                        OnChargeStart?.Invoke();
+                        break;
+                }
             }
         }
 
@@ -82,17 +92,18 @@ namespace MrBones
 
         private void ChargeState()
         {
-            chargeStrength += Time.fixedDeltaTime * 20;
-            if (chargeStrength > maxChargeStrength)
-                chargeStrength = maxChargeStrength;
+            chargeStrength.Value += Time.fixedDeltaTime * 20;
+            if (chargeStrength.Value > maxChargeStrength.Value)
+                chargeStrength.Value = maxChargeStrength.Value;
         }
 
         private void Burst()
         {
+            var finalStrength = chargeStrength.Value;
             currentState = States.Idle;
-            charMovementController.Burst(LookDirection, chargeStrength);
-            chargeStrength = 0;
-            OnBurst?.Invoke();
+            charMovementController.Burst(LookDirection, chargeStrength.Value);
+            chargeStrength.Value = 0;
+            OnBurst?.Invoke(finalStrength);
         }
     }
 

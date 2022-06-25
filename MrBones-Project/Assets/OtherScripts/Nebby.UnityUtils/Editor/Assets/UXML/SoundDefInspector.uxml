@@ -10,5 +10,6 @@
             <uie:PropertyField name="constantPitch" binding-path="constantPitch" />
             <uie:PropertyField name="pitch" binding-path="pitch" />
         </ui:VisualElement>
+        <ui:Button text="Play Sound" display-tooltip-when-elided="true" name="play" />
     </ui:VisualElement>
 </ui:UXML>

@@ -5,7 +5,8 @@
         "Cinemachine",
         "Nebby.CSharpUtils",
         "Nebby.UnityUtils.Runtime",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "MrBones.Pickups"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -11,5 +11,12 @@ namespace Nebby.CSharpUtils
             Array.Resize(ref tArray, newLength);
             tArray[newLength] = element;
         }
+
+        public static T GetSafe<T>(ref T[] tArray, int index)
+        {
+            if (tArray.Length < index || index < 0)
+                return default;
+            return tArray[index];
+        }
     }
 }

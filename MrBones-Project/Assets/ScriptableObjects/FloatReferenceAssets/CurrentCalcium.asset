@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61eb92b0d09edd8449712a7d4f1174d5, type: 3}
   m_Name: CurrentCalcium
   m_EditorClassIdentifier: 
-  floatValue: -3.019995
+  floatValue: 57.25152

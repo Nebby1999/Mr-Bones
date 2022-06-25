@@ -17,4 +17,4 @@ MonoBehaviour:
     constant: Infinity
     assetReference: {fileID: 0}
     useConstant: 1
-  scale: 3
+  scale: 1.75

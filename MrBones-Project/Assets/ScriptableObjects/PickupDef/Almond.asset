@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupSprite: {fileID: 21300000, guid: 2a40aeaf9e6a2bd47ad55a343aa0f3c5, type: 3}
   calciumAmount:
-    constant: 5
+    constant: 1
     assetReference: {fileID: 11400000, guid: 09d103db473f40f44993cad5c50ac78d, type: 2}
     useConstant: 1
-  scale: 1.5
+  scale: 1

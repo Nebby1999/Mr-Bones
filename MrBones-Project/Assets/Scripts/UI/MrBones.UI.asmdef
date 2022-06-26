@@ -5,7 +5,8 @@
         "Nebby.CSharpUtils",
         "Nebby.UnityUtils.Runtime",
         "UnityEngine.UI",
-        "MrBones"
+        "MrBones",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

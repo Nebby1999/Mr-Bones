@@ -50,7 +50,7 @@ MonoBehaviour:
   pickupDef: {fileID: 0}
   triggerColliderTag: {fileID: 11400000, guid: dbebee8d69bb58c4abfe6cc9e6bcee39, type: 2}
   hasGravity: 1
-  scaleToPickupDefScale: 1
+  scaleToPickupDefScale: 0
   polygonCollider: {fileID: 1791955045781407481}
 --- !u!50 &1791955045606652303
 Rigidbody2D:
@@ -88,7 +88,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!1 &1791955045781407482
 GameObject:
   m_ObjectHideFlags: 0

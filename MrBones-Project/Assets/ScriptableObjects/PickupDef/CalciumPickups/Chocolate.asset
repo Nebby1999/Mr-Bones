@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec9716926639784b826d0c853dadbdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6aee6c0246b1de046b7ad4a4aba9ddad, type: 3}
   m_Name: Chocolate
   m_EditorClassIdentifier: 
   pickupSprite: {fileID: 21300000, guid: 9bed0160280c8604d934e87b31202826, type: 3}
+  scale: 1.25
   calciumAmount:
     constant: 5
     assetReference: {fileID: 11400000, guid: b1132784403a1104cba07a412b3538bb, type: 2}
     useConstant: 1
-  scale: 1.25

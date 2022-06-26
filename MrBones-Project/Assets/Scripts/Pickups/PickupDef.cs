@@ -6,11 +6,9 @@ using Nebby.CSharpUtils;
 
 namespace MrBones.Pickups
 {
-    [CreateAssetMenu(menuName = "MrBones/PickupDef")]
-    public class PickupDef : ScriptableObject
+    public abstract class PickupDef : ScriptableObject
     {
         public Sprite pickupSprite;
-        public FloatReference calciumAmount;
         public float scale;
     }
 }

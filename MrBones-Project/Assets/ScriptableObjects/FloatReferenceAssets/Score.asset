@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec9716926639784b826d0c853dadbdd, type: 3}
-  m_Name: Milk
+  m_Script: {fileID: 11500000, guid: 61eb92b0d09edd8449712a7d4f1174d5, type: 3}
+  m_Name: Score
   m_EditorClassIdentifier: 
-  pickupSprite: {fileID: 21300000, guid: b2a4bc58cd01514409c274643b39a996, type: 3}
-  calciumAmount:
-    constant: Infinity
-    assetReference: {fileID: 0}
-    useConstant: 1
-  scale: 1.75
+  floatValue: 0

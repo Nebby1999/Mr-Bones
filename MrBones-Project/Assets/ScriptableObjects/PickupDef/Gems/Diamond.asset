@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec9716926639784b826d0c853dadbdd, type: 3}
-  m_Name: Almond
+  m_Script: {fileID: 11500000, guid: c289368d295f4fd4dbd8c9408c94367d, type: 3}
+  m_Name: Diamond
   m_EditorClassIdentifier: 
-  pickupSprite: {fileID: 21300000, guid: 2a40aeaf9e6a2bd47ad55a343aa0f3c5, type: 3}
-  calciumAmount:
-    constant: 1
-    assetReference: {fileID: 11400000, guid: 09d103db473f40f44993cad5c50ac78d, type: 2}
+  pickupSprite: {fileID: 21300000, guid: df18d1189942d104ea33822cae646d32, type: 3}
+  scale: 0
+  score:
+    constant: 1000
+    assetReference: {fileID: 0}
     useConstant: 1
-  scale: 1

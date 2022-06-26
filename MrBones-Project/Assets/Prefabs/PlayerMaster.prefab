@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7486169330432020699}
   - component: {fileID: 7486169330432020696}
   - component: {fileID: 7486169330432020697}
+  - component: {fileID: 3319559764722448327}
   m_Layer: 0
   m_Name: PlayerMaster
   m_TagString: Untagged
@@ -46,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  score:
+    constant: 0
+    assetReference: {fileID: 11400000, guid: 5b8c7c52ac1146c4e864893490a77a1e, type: 2}
+    useConstant: 0
 --- !u!114 &7486169330432020697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,3 +201,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3319559764722448327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486169330432020646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93895a0a5bf1b3e458db55e22da14759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newValue:
+    constant: 0
+    assetReference: {fileID: 11400000, guid: 5b8c7c52ac1146c4e864893490a77a1e, type: 2}
+    useConstant: 1
+  valueToModify: {fileID: 11400000, guid: 5b8c7c52ac1146c4e864893490a77a1e, type: 2}
+  destroyOnSet: 0

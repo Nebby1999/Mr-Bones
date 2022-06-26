@@ -12,13 +12,13 @@ namespace MrBones.Pickups
     [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
     public class GenericPickupController : MonoBehaviour
     {
-        [SerializeField] private PickupDef pickupDef;
+        public PickupDef pickupDef;
         [SerializeField] private TagObject triggerColliderTag;
         [SerializeField] private bool hasGravity = true;
         [SerializeField] private bool scaleToPickupDefScale = true;
         [SerializeField] private PolygonCollider2D polygonCollider;
+        public UnityEvent OnPickupCollected;
         public PolygonCollider2D PolygonCollider2D => polygonCollider;
-        public PickupDef PickupDef => pickupDef;
         public CircleCollider2D TriggerCollider { get; private set; }
         public Rigidbody2D RigidBody2D { get; private set; }
 
@@ -95,9 +95,10 @@ namespace MrBones.Pickups
             IPickupCollector pickupCollector = root.GetComponent<IPickupCollector>();
             if (pickupCollector != null)
             {
-                bool success = pickupCollector.OnPickupInteraction(gameObject, PickupDef);
+                bool success = pickupCollector.OnPickupInteraction(gameObject, pickupDef);
                 if(success)
                 {
+                    OnPickupCollected?.Invoke();
                     Destroy(gameObject);
                 }
             }

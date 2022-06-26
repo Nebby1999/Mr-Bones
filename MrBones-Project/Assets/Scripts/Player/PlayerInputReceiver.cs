@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Nebby.UnityUtils;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,8 +7,19 @@ namespace MrBones
 {
     public class PlayerInputReceiver : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerController playerController;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private FloatReference score;
+
+        public float Score
+        {
+            get => score.Value;
+            set => score.Value = value;
+        }
+
+        private void Awake()
+        {
+            playerController.PlayerInputReceiver = this;
+        }
 
         public void OnMove(InputAction.CallbackContext context) => playerController.HandleMovement(context);
 

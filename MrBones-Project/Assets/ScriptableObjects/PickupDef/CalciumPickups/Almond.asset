@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec9716926639784b826d0c853dadbdd, type: 3}
-  m_Name: Yoghurt
+  m_Script: {fileID: 11500000, guid: 6aee6c0246b1de046b7ad4a4aba9ddad, type: 3}
+  m_Name: Almond
   m_EditorClassIdentifier: 
-  pickupSprite: {fileID: 21300000, guid: d23981e0c02855e44b852a5dcd8c37ee, type: 3}
+  pickupSprite: {fileID: 21300000, guid: 2a40aeaf9e6a2bd47ad55a343aa0f3c5, type: 3}
+  scale: 1
   calciumAmount:
-    constant: 10
-    assetReference: {fileID: 0}
+    constant: 1
+    assetReference: {fileID: 11400000, guid: 09d103db473f40f44993cad5c50ac78d, type: 2}
     useConstant: 1
-  scale: 1.5

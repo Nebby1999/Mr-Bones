@@ -28,6 +28,7 @@ namespace MrBones
         public CharacterMovementController CharacterMovementController { get; private set; }
         public MrBonesAnimatorController AnimatorController { get; private set; }
         public ShoutController ShoutController { get; private set; }
+        public PlayerInputReceiver PlayerInputReceiver { get; set; }
 
         private Vector2 movementControl;
         private Vector2 lookControl;
@@ -64,11 +65,22 @@ namespace MrBones
 
         public bool OnPickupInteraction(GameObject rootGO, PickupDef pickupDef)
         {
-            calciumLevel.Value += pickupDef.calciumAmount.Value;
-            if (calciumLevel.Value > maxCalcium.Value)
-                maxCalcium.Value = calciumLevel.Value;
-
-            return true;
+            switch(pickupDef)
+            {
+                case CalciumPickup calcium:
+                    {
+                        calciumLevel.Value += calcium.calciumAmount.Value;
+                        if (calciumLevel.Value > maxCalcium.Value)
+                            maxCalcium.Value = calciumLevel.Value;
+                        return true;
+                    }
+                case GemPickup gem:
+                    {
+                        PlayerInputReceiver.Score += gem.score.Value;
+                        return true;
+                    }
+            }
+            return false;
         }
 
         public float DealDamageToBreakable(BreakableBehaviour behaviour, GameObject rootGameObject)

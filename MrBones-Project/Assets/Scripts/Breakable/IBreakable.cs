@@ -5,15 +5,8 @@ using UnityEngine.Events;
 
 namespace MrBones.Breakable
 {
-    public interface IBreakable
+    public interface IBreakableBreaker
     {
-        public abstract float BreakableHP { get; set; }
-        public virtual void TakeDamage(float damage)
-        {
-            BreakableHP -= damage;
-            if (BreakableHP <= 0)
-                OnBreak();
-        }
-        public abstract void OnBreak();
+        public abstract float DealDamageToBreakable(BreakableBehaviour behaviour, GameObject rootGameObject);
     }
 }

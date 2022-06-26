@@ -28,6 +28,10 @@ namespace MrBones
         public UnityEvent OnConstantScreamStart;
         public UnityEvent OnConstantScreamEnd;
         public Vector2 LookDirection { get; set; }
+        public float ChargeStrength { get => chargeStrength.Value; }
+        public float PreviousChargeStrength { get; private set; }
+        public bool JustBursted { get; private set; }
+        private float burstTimer;
 
         private float strength;
 
@@ -35,6 +39,20 @@ namespace MrBones
         {
             Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, LookDirection);
             shoutParticleController.transform.rotation = lookRotation;
+            UpdateJustBurstedTimer();
+        }
+
+        private void UpdateJustBurstedTimer()
+        {
+            if(JustBursted)
+            {
+                if (burstTimer <= 0)
+                {
+                    JustBursted = false;
+                    burstTimer = 0;
+                }
+                burstTimer -= Time.deltaTime;
+            }
         }
 
         private void FixedUpdate()
@@ -99,11 +117,13 @@ namespace MrBones
 
         private void Burst()
         {
-            var finalStrength = chargeStrength.Value;
+            PreviousChargeStrength = chargeStrength.Value;
             currentState = States.Idle;
             charMovementController.Burst(LookDirection, chargeStrength.Value);
             chargeStrength.Value = 0;
-            OnBurst?.Invoke(finalStrength);
+            JustBursted = true;
+            burstTimer = 1;
+            OnBurst?.Invoke(PreviousChargeStrength);
         }
     }
 

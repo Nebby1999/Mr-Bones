@@ -818,6 +818,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &264824207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2074038398}
+    m_Modifications:
+    - target: {fileID: 2870148177337699934, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_text
+      value: Some objects with cracks can be broken by ramming yourself onto them
+        with a burst shout
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 53.899
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.152
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.95298713
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367013497319863945, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_Name
+      value: Breakable Sign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+--- !u!4 &264824208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+  m_PrefabInstance: {fileID: 264824207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &373258132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
@@ -862,6 +941,85 @@ Transform:
   m_Father: {fileID: 195018664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &401212811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2074038398}
+    m_Modifications:
+    - target: {fileID: 2870148177337699934, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_text
+      value: Pressing LB and holding LT will charge a burst shout. The burst will
+        quickly shoot you in a direction
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.95298713
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367013497319863945, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+      propertyPath: m_Name
+      value: Charge Sign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+--- !u!4 &401212812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4956595098697777823, guid: 398dee5c0f29e1043b64caeb67778192, type: 3}
+  m_PrefabInstance: {fileID: 401212811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &424340099 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8347247132449208324, guid: 37e48d4d404ba0b4bb8e8ae6c378ae0f, type: 3}
@@ -1266,7 +1424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8347247132449208321, guid: 37e48d4d404ba0b4bb8e8ae6c378ae0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.03843724
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8347247132449208321, guid: 37e48d4d404ba0b4bb8e8ae6c378ae0f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1770,7 +1928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815152456515603190, guid: 197cca92be911474ba82d58e4caa0e31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.961563
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 5815152456515603190, guid: 197cca92be911474ba82d58e4caa0e31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1917,7 +2075,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2125,7 +2283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224807472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.95, y: -1.1110001, z: -9.961563}
+  m_LocalPosition: {x: -1.95, y: -1.1110001, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3248,7 +3406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074038397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3258,6 +3416,8 @@ Transform:
   - {fileID: 373258132}
   - {fileID: 1038569185}
   - {fileID: 1718584902}
+  - {fileID: 401212812}
+  - {fileID: 264824208}
   m_Father: {fileID: 1614087293}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,0 +1,20 @@
+{
+    "name": "MrBones.Player",
+    "rootNamespace": "",
+    "references": [
+        "Nebby.UnityUtils.Editor",
+        "Nebby.UnityUtils.Runtime",
+        "Unity.InputSystem",
+        "MrBones.Breakable",
+        "MrBones.Pickups"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

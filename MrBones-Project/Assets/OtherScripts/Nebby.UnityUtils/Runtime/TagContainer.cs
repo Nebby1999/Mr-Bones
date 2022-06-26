@@ -40,5 +40,15 @@ namespace Nebby.UnityUtils
 
             return tags[index].name.Equals(tagName, System.StringComparison.OrdinalIgnoreCase);
         }
+
+        public bool ObjectHasTags(TagObject[] tags)
+        {
+            bool result = false;
+            for(int i = 0; i < tags.Length; i++)
+            {
+                result = ObjectHasTag(tags[i]);
+            }
+            return result;
+        }
     }
 }

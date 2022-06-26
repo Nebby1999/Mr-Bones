@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 using Nebby.UnityUtils;
 using MrBones.Pickups;
 using UnityEngine.Events;
+using MrBones.Breakable;
 
 namespace MrBones
 {
-    public class PlayerController : MonoBehaviour, IPickupCollector
+    public class PlayerController : MonoBehaviour, IPickupCollector, IBreakableBreaker
     {
         [Header("Calcium Related")]
         public FloatReference calciumLevel;
@@ -61,13 +62,22 @@ namespace MrBones
             }
         }
 
-        public bool OnPickupInteraction(GameObject pickupObject, PickupDef pickupDef)
+        public bool OnPickupInteraction(GameObject rootGO, PickupDef pickupDef)
         {
             calciumLevel.Value += pickupDef.calciumAmount.Value;
             if (calciumLevel.Value > maxCalcium.Value)
                 maxCalcium.Value = calciumLevel.Value;
 
             return true;
+        }
+
+        public float DealDamageToBreakable(BreakableBehaviour behaviour, GameObject rootGameObject)
+        {
+            if(ShoutController.JustBursted)
+            {
+                return ShoutController.PreviousChargeStrength;
+            }
+            return 0;
         }
 
         public void OnBurst(float shoutStrength)

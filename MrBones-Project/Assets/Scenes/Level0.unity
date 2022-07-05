@@ -5546,6 +5546,7 @@ MonoBehaviour:
   triggerColliderTag: {fileID: 11400000, guid: dbebee8d69bb58c4abfe6cc9e6bcee39, type: 2}
   hasGravity: 1
   scaleToPickupDefScale: 0
+  destroyOnCollected: 0
   polygonCollider: {fileID: 1791955046496676339}
   OnPickupCollected:
     m_PersistentCalls:
@@ -5554,6 +5555,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: MrBones.MilkController, MrBones
         m_MethodName: OnCollect
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1791955046496676336}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5612,6 +5625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   youWinText: {fileID: 509328918}
+  collected: 0
+  timeTilExit: 3
 --- !u!1 &1791955046496676336
 GameObject:
   m_ObjectHideFlags: 0

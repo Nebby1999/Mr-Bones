@@ -16,6 +16,7 @@ namespace MrBones.Pickups
         [SerializeField] private TagObject triggerColliderTag;
         [SerializeField] private bool hasGravity = true;
         [SerializeField] private bool scaleToPickupDefScale = true;
+        [SerializeField] private bool destroyOnCollected = true;
         [SerializeField] private PolygonCollider2D polygonCollider;
         public UnityEvent OnPickupCollected;
         public PolygonCollider2D PolygonCollider2D => polygonCollider;
@@ -99,7 +100,8 @@ namespace MrBones.Pickups
                 if(success)
                 {
                     OnPickupCollected?.Invoke();
-                    Destroy(gameObject);
+                    if(destroyOnCollected)
+                        Destroy(gameObject);
                 }
             }
         }

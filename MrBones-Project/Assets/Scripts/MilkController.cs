@@ -11,6 +11,9 @@ namespace MrBones
     public class MilkController : MonoBehaviour
     {
         public GameObject youWinText;
+        public bool collected = false;
+        public float timeTilExit;
+        private float internalTimer;
         public void Awake()
         {
             youWinText.SetActive(false);
@@ -18,7 +21,19 @@ namespace MrBones
         public void OnCollect()
         {
             youWinText.SetActive(true);
-            Invoke(nameof(LoadMainMenu), 3);
+            collected = true;
+        }
+
+        private void Update()
+        {
+            if(collected)
+            {
+                internalTimer += Time.deltaTime;
+                if(internalTimer > timeTilExit)
+                {
+                    LoadMainMenu();
+                }
+            }
         }
         private void LoadMainMenu()
         {

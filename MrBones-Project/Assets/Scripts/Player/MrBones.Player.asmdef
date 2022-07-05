@@ -2,7 +2,7 @@
     "name": "MrBones.Player",
     "rootNamespace": "",
     "references": [
-        "Nebby.UnityUtils.Editor",
+        "Nebby.CSharpUtils",
         "Nebby.UnityUtils.Runtime",
         "Unity.InputSystem",
         "MrBones.Breakable",

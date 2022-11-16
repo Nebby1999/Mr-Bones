@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c90b50e2d448734db8b04860d813551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterBodyPrefab: {fileID: 7155307827250324237, guid: d1e7e2e99a10228458257fbc612757c1, type: 3}
+  characterBodyPrefab: {fileID: 8173773691103504056, guid: d1e7e2e99a10228458257fbc612757c1, type: 3}
   spawnOnStart: 1
 --- !u!114 &9131756695624281820
 MonoBehaviour:
@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df6c96f5dcd76746ab46e03a12cb1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oldMouseInput: 1
 --- !u!114 &3016180230534664891
 MonoBehaviour:
   m_ObjectHideFlags: 0

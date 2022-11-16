@@ -20,6 +20,7 @@ namespace EntityStates.MrBones
         public override void OnEnter()
         {
             base.OnEnter();
+
             var lookDirection = InputSimulator.AimDirection;
             if (lookDirection == Vector2.zero)
                 lookDirection = Vector2.up;

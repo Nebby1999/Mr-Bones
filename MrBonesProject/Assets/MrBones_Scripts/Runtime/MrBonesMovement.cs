@@ -17,6 +17,9 @@ namespace MrBones
         public Rigidbody2D Rigidbody2D { get; private set; }
         public CharacterBody CharacterBody { get; private set; }
         public Collider2D Collider { get; private set; }
+        public bool Breaking => breaking;
+        public bool Grounded => grounded;
+
         public Vector2 maxVelocity;
         public float breakCoefficient;
 
@@ -25,7 +28,6 @@ namespace MrBones
         public float maximumHopStrength;
         public float hopStrengthDivisor;
 
-        private InputActionProperty hopInput, breakingInput;
         [Header("Ground Check Settings")]
         public LayerMask groundLayers;
         public float extraBoxCastHeight;

@@ -54,7 +54,11 @@ namespace EntityStates.MrBones
         private void RestoreScream()
         {
             var restorePerSecond = screamEnergyRestoredPerSecond;
-            ScreamComponent.CurrentScreamEnergy += screamEnergyRestoredPerSecond * Time.fixedDeltaTime;
+            if(!MrBonesMovement.Grounded)
+            {
+                restorePerSecond *= onAirRestoringCoefficient;
+            }
+            ScreamComponent.CurrentScreamEnergy += restorePerSecond * Time.fixedDeltaTime;
         }
 
         private void PlayIdleAnimation()

@@ -37,3 +37,7 @@ MonoBehaviour:
       serializedValue:
         stringValue: IdleSpeed
         objectReferenceValue: {fileID: 0}
+    - fieldName: onAirRestoringCoefficient
+      serializedValue:
+        stringValue: 0.2
+        objectReferenceValue: {fileID: 0}

@@ -39,6 +39,7 @@ namespace EntityStates.MrBones
         public override void Update()
         {
             base.Update();
+            Debug.Log(currentCharge);
             float str = shakeCurve.Evaluate(currentCharge);
             var rnd = UnityEngine.Random.insideUnitCircle * str;
             var newPos = new Vector3(originalLocalPos.x + rnd.x, originalLocalPos.y + rnd.y, originalLocalPos.z);

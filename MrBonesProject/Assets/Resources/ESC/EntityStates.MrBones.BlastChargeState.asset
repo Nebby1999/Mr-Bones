@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: EntityStates.MrBones.BlastChargeState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.MrBones.BlastState, MrBones.EntityStates,
+    _assemblyQualifiedName: EntityStates.MrBones.BlastChargeState, MrBones.EntityStates,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: blastStrength
+    - fieldName: chargeGain
       serializedValue:
-        stringValue: 10
+        stringValue: 5
         objectReferenceValue: {fileID: 0}
-    - fieldName: blastDuration
+    - fieldName: shakeCurve
       serializedValue:
-        stringValue: 3
+        stringValue: '{"preWrapMode":8,"postWrapMode":8,"keys":[{"time":0.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"inWeight":0.0,"outWeight":0.0,"weightedMode":0,"tangentMode":0},{"time":10.201919555664063,"value":0.980987548828125,"inTangent":0.1955212652683258,"outTangent":0.1955212652683258,"inWeight":0.3639696538448334,"outWeight":0.0,"weightedMode":0,"tangentMode":0}]}'
         objectReferenceValue: {fileID: 0}
-    - fieldName: blastSound
+    - fieldName: soundDefPoolName
       serializedValue:
-        stringValue: 
-        objectReferenceValue: {fileID: 11400000, guid: 5efa1b3ad046c1f48a09437b737c4247, type: 2}
+        stringValue: blastCharge
+        objectReferenceValue: {fileID: 0}

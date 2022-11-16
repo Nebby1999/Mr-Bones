@@ -59,7 +59,7 @@ namespace MrBones
 		public Vector2 GetMouseInput()
         {
 			Vector2 mousePoint = mainCam.ScreenToWorldPoint(rawAimVector);
-			Vector2 subtrahend = centerScreenMouseInput ? centerScreen : (body ? body.transform.position : transform.position);
+			Vector2 subtrahend = centerScreenMouseInput ? mainCam.ScreenToWorldPoint((Vector2)centerScreen) : (body ? body.transform.position : transform.position);
 			Vector2 val3 = mousePoint - subtrahend;
 			return val3.normalized;
 		}

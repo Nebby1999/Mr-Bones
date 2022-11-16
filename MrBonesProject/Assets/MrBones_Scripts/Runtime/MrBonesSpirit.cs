@@ -7,31 +7,20 @@ namespace MrBones
 	[RequireComponent(typeof(CharacterSpirit), typeof(PlayerInput))]
 	public class MrBonesSpirit : MonoBehaviour
 	{
-		private Vector2 movementInput;
-
-		private Vector2 rawAimVector;
-
-		private Vector2 aimVector;
-
-		private InputActionPhase breakingInput;
-
-		private InputActionPhase hoppingInput;
+		public PlayerInput PlayerInput { get; private set; }
+		public CharacterSpirit Spirit { get; private set; }
+		public bool IsUsingMouseInput => PlayerInput.FindFirstPairedToDevice(Mouse.current) == PlayerInput;
+		public bool centerScreenMouseInput = true;
+		public static event Action<MrBonesSpirit> OnMrBonesSpawned;
 
 		private CharacterBody body;
-
-		private MrBonesMovement bodyMovement;
-
-		private InputSimulator bodyInputs;
-
 		private Camera mainCam;
-
-		public PlayerInput PlayerInput { get; private set; }
-
-		public CharacterSpirit Spirit { get; private set; }
-
-		public bool IsUsingMouseInput => PlayerInput.FindFirstPairedToDevice(Mouse.current) == PlayerInput;
-
-		public static event Action<MrBonesSpirit> OnMrBonesSpawned;
+		private InputSimulator bodyInputs;
+		private Vector2 movementInput;
+		private Vector2 rawAimVector;
+		private Vector2 aimVector;
+		private Vector2Int screenRes;
+		private Vector2Int centerScreen;
 
 		private void Awake()
 		{
@@ -39,6 +28,8 @@ namespace MrBones
 			Spirit = GetComponent<CharacterSpirit>();
 			Spirit.OnBodySpawned += OnBodySpawned;
 			mainCam = Camera.main;
+			screenRes = new Vector2Int(Screen.width, Screen.height);
+			centerScreen = screenRes / 2;
 		}
 
 		private void OnBodySpawned(CharacterBody obj)
@@ -46,25 +37,32 @@ namespace MrBones
 			OnMrBonesSpawned?.Invoke(this);
 		}
 
-		private void FixedUpdate()
+        private void Update()
+        {
+            if(screenRes.x != Screen.width || screenRes.y != Screen.height)
+            {
+				screenRes = new Vector2Int(Screen.width, Screen.height);
+				centerScreen = screenRes / 2;
+            }
+        }
+        private void FixedUpdate()
 		{
 			SetBody(Spirit.BodyObjectInstance);
 			if (body)
 			{
 				bodyInputs.movementInput = movementInput;
-				Vector2 normalized = rawAimVector;
-				if (IsUsingMouseInput)
-				{
-					Vector2 val = mainCam.ScreenToWorldPoint(rawAimVector);
-					Vector2 val2 = Spirit.BodyObjectInstance ? Spirit.BodyObjectInstance.transform.position : transform.position;
-					Vector2 val3 = val - val2;
-					normalized = val3.normalized;
-				}
-				aimVector = normalized;
+				aimVector = IsUsingMouseInput ? GetMouseInput() : rawAimVector;
 				bodyInputs.AimDirection = aimVector;
 			}
 		}
 
+		public Vector2 GetMouseInput()
+        {
+			Vector2 mousePoint = mainCam.ScreenToWorldPoint(rawAimVector);
+			Vector2 subtrahend = centerScreenMouseInput ? centerScreen : (body ? body.transform.position : transform.position);
+			Vector2 val3 = mousePoint - subtrahend;
+			return val3.normalized;
+		}
 		public void OnMove(InputAction.CallbackContext context)
 		{
 			movementInput = context.ReadValue<Vector2>();
@@ -106,7 +104,6 @@ namespace MrBones
 			body = newBody ? newBody.GetComponent<CharacterBody>() : null;
 			if (body)
 			{
-				bodyMovement = body.GetComponent<MrBonesMovement>();
 				bodyInputs = body.InputSimulator;
 			}
 		}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
+  m_Name: EntityStates.MrBones.ScreamState
+  m_EditorClassIdentifier: 
+  targetType:
+    _assemblyQualifiedName: EntityStates.MrBones.ScreamState, MrBones.EntityStates,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  fieldCollection:
+    serializedFields:
+    - fieldName: screamEnergyDeductedPerSecond
+      serializedValue:
+        stringValue: 5
+        objectReferenceValue: {fileID: 0}
+    - fieldName: screamForce
+      serializedValue:
+        stringValue: 75
+        objectReferenceValue: {fileID: 0}
+    - fieldName: screamStateName
+      serializedValue:
+        stringValue: Scream
+        objectReferenceValue: {fileID: 0}
+    - fieldName: screamPlaybackRateName
+      serializedValue:
+        stringValue: ScreamSpeed
+        objectReferenceValue: {fileID: 0}
+    - fieldName: minParticleEmissionRate
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}
+    - fieldName: maxParticleEmissionRate
+      serializedValue:
+        stringValue: 10
+        objectReferenceValue: {fileID: 0}
+    - fieldName: soundDefPoolName
+      serializedValue:
+        stringValue: screamPool
+        objectReferenceValue: {fileID: 0}
+    - fieldName: fallingScreamForceCoefficient
+      serializedValue:
+        stringValue: 1.5
+        objectReferenceValue: {fileID: 0}

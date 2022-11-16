@@ -1,0 +1,21 @@
+{
+    "name": "MrBones.UI",
+    "rootNamespace": "MrBones.UI",
+    "references": [
+        "MrBones.Main",
+        "Nebby.CSharpUtils",
+        "Nebby.UnityUtils.Runtime",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "MrBones.Stages"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

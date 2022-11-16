@@ -1,0 +1,26 @@
+{
+    "name": "MrBones.Main",
+    "rootNamespace": "MrBones",
+    "references": [
+        "Cinemachine",
+        "Nebby.CSharpUtils",
+        "Unity.Addressables",
+        "Unity.InputSystem",
+        "Unity.ResourceManager",
+        "Unity.TextMeshPro",
+        "Unity.Timeline",
+        "UnityEngine.UI",
+        "Nebby.UnityUtils.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Nebby.UnityUtils.Runtime",
+    "rootNamespace": "Nebby",
+    "references": [
+        "Nebby.CSharpUtils",
+        "Unity.Addressables",
+        "Cinemachine",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

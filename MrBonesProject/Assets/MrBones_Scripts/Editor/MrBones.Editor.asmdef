@@ -1,0 +1,24 @@
+{
+    "name": "MrBones.Editor",
+    "rootNamespace": "MrBones.Editor",
+    "references": [
+        "Nebby.CSharpUtils",
+        "Nebby.UnityUtils.Editor",
+        "Nebby.UnityUtils.Runtime",
+        "MrBones.Main",
+        "MrBones.Stages",
+        "MrBones.Pickups",
+        "MrBones.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

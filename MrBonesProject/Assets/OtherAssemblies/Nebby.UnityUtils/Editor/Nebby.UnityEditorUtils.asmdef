@@ -1,0 +1,20 @@
+{
+    "name": "Nebby.UnityUtils.Editor",
+    "rootNamespace": "Nebby.Editor",
+    "references": [
+        "Nebby.UnityUtils.Runtime",
+        "Nebby.CSharpUtils",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992c82bafb21d184da40ba5010ec412c, type: 3}
+  m_Name: 0-3 - verticality
+  m_EditorClassIdentifier: 
+  sceneToLoad:
+    _sceneName: verticality
+    _scenePath: Assets/Scenes/verticality.unity
+    _sceneBuildIndex: 5
+  stageNumber: 3
+  stageName: Verticality
+  parTime: 30
+  nextStage: {fileID: 11400000, guid: 97e563b9673e0124bbd172ca19a1e6dc, type: 2}

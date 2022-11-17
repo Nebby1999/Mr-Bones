@@ -14,9 +14,10 @@ namespace Nebby
     public class SoundDefPool : MonoBehaviour
     {
         [SerializeField] private string customName;
-        [SerializeField] private SoundDef[] soundDefs;
-        [SerializeField] private bool fadeOutOnStop;
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private bool pauseOnGamePause = true;
+        [SerializeField] private bool fadeOutOnStop;
+        [SerializeField] private SoundDef[] soundDefs;
 
         public AudioSource AudioSource => audioSource;
         private IEnumerator fadeOutCoroutine;
@@ -27,6 +28,27 @@ namespace Nebby
         {
             audioSource = GetComponent<AudioSource>();
         }
+
+        private void OnEnable()
+        {
+            PauseManager.OnPauseChange -= PauseOrUnpauseSource;
+            if(pauseOnGamePause)
+                PauseManager.OnPauseChange += PauseOrUnpauseSource;
+        }
+
+        private void PauseOrUnpauseSource(bool shouldPause)
+        {
+            if (shouldPause)
+                audioSource.Pause();
+            else
+                audioSource.Play();
+        }
+
+        private void OnDisable()
+        {
+            PauseManager.OnPauseChange -= PauseOrUnpauseSource;
+        }
+
         public virtual void PlayRandomSound()
         {
             if (fadeOutCoroutine != null)

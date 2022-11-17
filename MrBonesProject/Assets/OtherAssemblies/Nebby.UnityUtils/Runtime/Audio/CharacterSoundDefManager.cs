@@ -8,6 +8,7 @@ namespace Nebby
     [DisallowMultipleComponent]
     public class CharacterSoundDefManager : MonoBehaviour
     {
+        public bool pauseSoundsOnGamePause = true;
         [ReadOnly] public GameObject audioSourceHolder;
 
         public readonly Dictionary<SoundDef, AudioSource> soundDefToTiedSource = new();
@@ -18,6 +19,29 @@ namespace Nebby
             {
                 audioSourceHolder = new GameObject($"{gameObject.name}_SoundDefManager");
                 audioSourceHolder.hideFlags = HideFlags.HideInHierarchy;
+            }
+        }
+
+        private void OnEnable()
+        {
+            PauseManager.OnPauseChange -= PauseOrUnpauseAllSources;
+            if(pauseSoundsOnGamePause)
+                PauseManager.OnPauseChange += PauseOrUnpauseAllSources;
+        }
+
+        private void OnDisable()
+        {
+            PauseManager.OnPauseChange -= PauseOrUnpauseAllSources;
+        }
+
+        private void PauseOrUnpauseAllSources(bool shouldPause)
+        {
+            foreach(AudioSource source in soundDefToTiedSource.Values)
+            {
+                if (shouldPause)
+                    source.Pause();
+                else
+                    source.UnPause();
             }
         }
 

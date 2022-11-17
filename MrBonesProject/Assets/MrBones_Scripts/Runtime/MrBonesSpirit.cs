@@ -1,3 +1,4 @@
+using Nebby;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -98,6 +99,12 @@ namespace MrBones
 			InputActionPhase phase = context.phase;
 			bodyInputs.fire2.SetPhase(phase);
 		}
+
+		public void OnPause(InputAction.CallbackContext context)
+        {
+			Debug.Log(context);
+			PauseManager.SetPause(PauseManager.IsPaused ? false : true);
+        }
 
 		private void SetBody(GameObject newBody)
 		{

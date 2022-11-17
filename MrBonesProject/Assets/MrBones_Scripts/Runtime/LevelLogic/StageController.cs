@@ -6,14 +6,26 @@ using UnityEngine.SceneManagement;
 namespace MrBones.Stages
 {
     [RequireComponent(typeof(TimerComponent))]
-    public class StageController : MonoBehaviour
+    public class StageController : SingletonBehaviour<StageController>
     {
         public StageDef tiedStage;
         public TimerComponent Timer { get; private set; }
 
+        private void OnValidate()
+        {
+            if(!tiedStage)
+            {
+                Debug.LogError($"No stage provided for {this}!", this);
+            }
+        }
         private void Awake()
         {
             Timer = GetComponent<TimerComponent>();
+        }
+
+        public void Restart()
+        {
+            tiedStage.sceneToLoad.LoadScene();
         }
 
         public void OnMilkCollected()

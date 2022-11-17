@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace MrBones.Pickups
+namespace MrBones
 {
     [RequireComponent(typeof(GenericPickupController))]
     public class MilkPickup : MonoBehaviour, IPickable

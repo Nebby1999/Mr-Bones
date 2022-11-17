@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MrBones.Stages
+namespace MrBones
 {
     [CreateAssetMenu(fileName = "New StageDef", menuName = "MrBones/StageDef")]
     public class StageDef : ScriptableObject

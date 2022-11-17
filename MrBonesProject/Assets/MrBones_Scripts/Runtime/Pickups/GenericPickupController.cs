@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nebby;
 
-namespace MrBones.Pickups
+namespace MrBones
 {
     [RequireComponent(typeof(CircleCollider2D), typeof(Rigidbody2D), typeof(IPickable))]
     public class GenericPickupController : MonoBehaviour
@@ -27,7 +27,7 @@ namespace MrBones.Pickups
             if (!transformToBob)
                 transformToBob = transform;
 
-            if(affectedByGravity)
+            if (affectedByGravity)
             {
                 GetComponent<Rigidbody2D>().gravityScale = 1;
             }
@@ -35,7 +35,7 @@ namespace MrBones.Pickups
 
         private void Start()
         {
-            if(transformToBob.parent)
+            if (transformToBob.parent)
             {
                 initialPos = transformToBob.localPosition;
             }
@@ -54,7 +54,7 @@ namespace MrBones.Pickups
         private void Bob()
         {
             Vector3 vector = initialPos + bobDistance * Mathf.Sin(Time.fixedTime - bobDelay);
-            if(transformToBob.parent)
+            if (transformToBob.parent)
             {
                 transformToBob.localPosition = vector;
             }
@@ -67,7 +67,7 @@ namespace MrBones.Pickups
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var pickupInfo = GeneratePickupInfo(collision.GetRootGameObject());
-            if(PickableBehaviour != null && PickableBehaviour.ShouldGrantPickup(pickupInfo))
+            if (PickableBehaviour != null && PickableBehaviour.ShouldGrantPickup(pickupInfo))
             {
                 PickableBehaviour.GrantPickupToPicker(pickupInfo);
                 Destroy(gameObject);

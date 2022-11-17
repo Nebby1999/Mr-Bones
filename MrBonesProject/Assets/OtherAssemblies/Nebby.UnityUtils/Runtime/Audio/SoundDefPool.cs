@@ -15,7 +15,7 @@ namespace Nebby
     {
         [SerializeField] private string customName;
         [SerializeField] private AudioSource audioSource;
-        [SerializeField] private bool pauseOnGamePause = true;
+        [SerializeField] private bool pauseOnGamePause = false;
         [SerializeField] private bool fadeOutOnStop;
         [SerializeField] private SoundDef[] soundDefs;
 
@@ -41,7 +41,7 @@ namespace Nebby
             if (shouldPause)
                 audioSource.Pause();
             else
-                audioSource.Play();
+                audioSource.UnPause();
         }
 
         private void OnDisable()

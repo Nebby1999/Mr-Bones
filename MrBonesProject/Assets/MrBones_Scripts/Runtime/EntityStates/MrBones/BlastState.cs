@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using MrBones;
 
 namespace EntityStates.MrBones
 {
@@ -17,9 +18,14 @@ namespace EntityStates.MrBones
         public float coefficientStrength;
         private float blastTimer;
         private ParticleSystem burst;
+        private BreakerComponent breakerComponent;
         public override void OnEnter()
         {
             base.OnEnter();
+
+            breakerComponent = GetComponent<BreakerComponent>();
+            if (breakerComponent)
+                breakerComponent.canHarmBreakable = true;
 
             var lookDirection = InputSimulator.AimDirection;
             if (lookDirection == Vector2.zero)
@@ -42,11 +48,19 @@ namespace EntityStates.MrBones
 
         public override void FixedUpdate()
         {
-            blastTimer += Time.fixedDeltaTime;
-            if(blastTimer > blastDuration)
+            base.FixedUpdate();
+            if(FixedAge > blastDuration)
             {
                 outer.SetNextStateToMain();
             }
+        }
+
+        public override void OnExit()
+        {
+            if(breakerComponent)
+                breakerComponent.canHarmBreakable = false;
+
+            base.OnExit();
         }
     }
 }

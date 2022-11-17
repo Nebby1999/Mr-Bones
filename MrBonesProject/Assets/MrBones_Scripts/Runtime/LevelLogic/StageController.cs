@@ -3,7 +3,7 @@ using UnityEngine;
 using Nebby;
 using UnityEngine.SceneManagement;
 
-namespace MrBones.Stages
+namespace MrBones
 {
     [RequireComponent(typeof(TimerComponent))]
     public class StageController : SingletonBehaviour<StageController>

@@ -1370,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7647165930900592383, guid: 10dec2f1db23d8346b86fde18f034717, type: 3}
+      propertyPath: timerComponent
+      value: 
+      objectReference: {fileID: 610606424}
     - target: {fileID: 8703645814579976434, guid: 10dec2f1db23d8346b86fde18f034717, type: 3}
       propertyPath: m_Name
       value: IngameUI
@@ -1736,7 +1740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270478364, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_MaxWindowSize
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 704850433, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_IsTrigger
@@ -1840,11 +1844,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757905357269530003, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.651824
+      value: -2.6518154
       objectReference: {fileID: 0}
     - target: {fileID: 4757905357269530003, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.6037617
+      value: -6.5485616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}

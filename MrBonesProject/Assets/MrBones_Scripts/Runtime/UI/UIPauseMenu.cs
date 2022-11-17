@@ -14,9 +14,9 @@ namespace MrBones.UI
 
         public void RestartStage()
         {
-            if(Stages.StageController.Instance)
+            if(StageController.Instance)
             {
-                Stages.StageController.Instance.Restart();
+                StageController.Instance.Restart();
                 return;
             }
             Debug.LogError("No stage controller instance");
@@ -30,6 +30,7 @@ namespace MrBones.UI
         public void Quit()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("mainmenu");
+            PauseManager.UnpauseGame();
         }
     }
 }

@@ -102,8 +102,8 @@ namespace MrBones
 
 		public void OnPause(InputAction.CallbackContext context)
         {
-			Debug.Log(context);
-			PauseManager.SetPause(PauseManager.IsPaused ? false : true);
+			if (context.started)
+				PauseManager.Switch();
         }
 
 		private void SetBody(GameObject newBody)

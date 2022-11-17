@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 namespace MrBones
 {
     [RequireComponent(typeof(InputSimulator), typeof(Rigidbody2D), typeof(CharacterBody))]
-    public class MrBonesMovement : MonoBehaviour
+    public class MrBonesMovement : MonoBehaviour, IBreakablesCollisionCallback
     {
         public InputSimulator InputSimulator { get; private set; }
         public Rigidbody2D Rigidbody2D { get; private set; }
@@ -42,7 +42,7 @@ namespace MrBones
 
         private bool hasJumped;
         private float coyoteTimer;
-
+        private Vector2 previousVelocity;
         private void Awake()
         {
             Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -70,6 +70,7 @@ namespace MrBones
             }
             canJump = CanJump();
             SetVelocity();
+            previousVelocity = Rigidbody2D.velocity;
             MovementByInput();
             if(InputSimulator.jump.Started)
             {
@@ -170,6 +171,15 @@ namespace MrBones
                 hopStr = Mathf.Min(hopStr, maximumHopStrength);
                 Rigidbody2D.AddForce(new Vector2(0, hopStr), ForceMode2D.Impulse);
             }
+        }
+
+        public void OnBreakablesCollision(BreakablesCollisionInfo collisionInfo)
+        {
+        }
+
+        public void OnBreakableBroken(BreakablesCollisionInfo collisionInfoThatBrokeTheBreakable)
+        {
+            Rigidbody2D.velocity = previousVelocity;
         }
     }
 }

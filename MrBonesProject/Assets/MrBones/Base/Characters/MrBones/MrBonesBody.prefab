@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 6369445818416353062}
   - component: {fileID: 7252409462514273533}
   - component: {fileID: 5497697256025881814}
+  - component: {fileID: 1603840169631652464}
   - component: {fileID: 8447893972003845937}
   - component: {fileID: 1503576206077288854}
   - component: {fileID: 325425040553803937}
@@ -291,10 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Main
   initialState:
-    _assemblyQualifiedName: EntityStates.MrBones.SpawnState, MrBones.EntityStates,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.MrBones.SpawnState, MrBones.Main, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: EntityStates.MrBones.Idle, MrBones.EntityStates, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.MrBones.Idle, MrBones.Main, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6369445818416353062
 MonoBehaviour:
@@ -357,6 +358,20 @@ MonoBehaviour:
   grounded: 0
   canJump: 0
   timesJumped: 0
+--- !u!114 &1603840169631652464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173773691103504056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3cb5f3def5d4c47b8098dca51de142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canHarmBreakable: 0
+  velocityToBreakableStrength: 1
 --- !u!50 &8447893972003845937
 Rigidbody2D:
   serializedVersion: 4
@@ -406,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce068beb731809f4b910e766490df995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseSoundsOnGamePause: 1
   audioSourceHolder: {fileID: 0}
 --- !u!114 &4994310762204755658
 MonoBehaviour:
@@ -520,13 +536,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: screamPool
+  audioSource: {fileID: 6662630863857991616}
+  pauseOnGamePause: 1
+  fadeOutOnStop: 0
   soundDefs:
   - {fileID: 11400000, guid: 8573c4c32e685d743abbd9148b474229, type: 2}
   - {fileID: 11400000, guid: 2ca1d0df91ccbc24f9876456c1b3bbde, type: 2}
   - {fileID: 11400000, guid: 2c3fae765bf68c9409b4a1ae6385bf55, type: 2}
   - {fileID: 11400000, guid: c13856791a7643a4a9d60183c341d069, type: 2}
-  fadeOutOnStop: 0
-  audioSource: {fileID: 6662630863857991616}
 --- !u!114 &1198940891964409182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,12 +557,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: blastCharge
+  audioSource: {fileID: 6662630863857991616}
+  pauseOnGamePause: 1
+  fadeOutOnStop: 0
   soundDefs:
   - {fileID: 11400000, guid: 4105345ba908c8440ad83c22d80c4f57, type: 2}
   - {fileID: 11400000, guid: be8e582dd4eae0042aa11a8f4ef14345, type: 2}
   - {fileID: 11400000, guid: 8201b77a478f1de45bc137d56d4aff80, type: 2}
-  fadeOutOnStop: 0
-  audioSource: {fileID: 6662630863857991616}
   raiseTime: 2
 --- !u!82 &6662630863857991616
 AudioSource:

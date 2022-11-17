@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EntityStates.MrBones.BlastState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.MrBones.BlastState, MrBones.EntityStates,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.MrBones.BlastState, MrBones.Main, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
     - fieldName: blastStrength

@@ -9,7 +9,7 @@ namespace MrBones.UI
 {
     public class UILevelInfoShower : MonoBehaviour
     {
-        public Stages.StageDef currentlyDisplayedStage;
+        public StageDef currentlyDisplayedStage;
         public TMPro.TextMeshProUGUI textMesh;
 
         private void Update()

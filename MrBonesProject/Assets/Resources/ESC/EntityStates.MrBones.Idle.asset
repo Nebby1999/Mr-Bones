@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EntityStates.MrBones.Idle
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.MrBones.Idle, MrBones.EntityStates, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.MrBones.Idle, MrBones.Main, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:

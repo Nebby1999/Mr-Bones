@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MrBones.Stages
+namespace MrBones
 {
     public class StageLoader : MonoBehaviour
     {

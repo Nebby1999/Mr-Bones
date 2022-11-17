@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace MrBones.Pickups
+namespace MrBones
 {
     [RequireComponent(typeof(GenericPickupController))]
     public class GenericScorePickup : MonoBehaviour, IPickable

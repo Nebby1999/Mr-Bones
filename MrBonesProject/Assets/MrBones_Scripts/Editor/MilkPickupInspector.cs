@@ -3,7 +3,7 @@ using UnityEngine;
 using Nebby.Editor;
 using UnityEditor;
 using UnityEditor.Events;
-using MrBones.Pickups;
+using MrBones;
 
 namespace MrBones.Editor
 {
@@ -22,7 +22,7 @@ namespace MrBones.Editor
 
         private void AutoFillOnPickedUpEvent()
         {
-            var stageController = FindObjectOfType<Stages.StageController>();
+            var stageController = FindObjectOfType<StageController>();
             if(stageController)
             {
                 UnityEventTools.AddVoidPersistentListener(TargetType.onPickedUp, new UnityEngine.Events.UnityAction(stageController.OnMilkCollected));

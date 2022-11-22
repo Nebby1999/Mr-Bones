@@ -1587,7 +1587,9 @@ MonoBehaviour:
   gridLayoutForButtons: {fileID: 2946373599761550537}
   allStages:
   - {fileID: 11400000, guid: 89c3a75a9a875224b917772911ff969a, type: 2}
+  - {fileID: 11400000, guid: 630c923fe7c308f41b1616f691ba565b, type: 2}
   - {fileID: 11400000, guid: b4db6f250dabb9d48a6d148a6c20c966, type: 2}
+  - {fileID: 11400000, guid: 005d038ef6e336f4c9f33fe08ec5a20c, type: 2}
   - {fileID: 11400000, guid: 860d27e133d82234887e24c98a3967ed, type: 2}
   - {fileID: 11400000, guid: 97e563b9673e0124bbd172ca19a1e6dc, type: 2}
   - {fileID: 11400000, guid: 90d25f740a58b234dbf92f716b4b315e, type: 2}

@@ -1342,6 +1342,10 @@ PrefabInstance:
       propertyPath: m_DeadZoneHeight
       value: 0.135
       objectReference: {fileID: 0}
+    - target: {fileID: 4757905357269529964, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
 --- !u!1001 &5909768818227007999

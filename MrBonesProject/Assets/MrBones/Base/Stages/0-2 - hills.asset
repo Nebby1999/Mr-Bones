@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992c82bafb21d184da40ba5010ec412c, type: 3}
-  m_Name: 0-1 - rollingon
+  m_Name: 0-2 - hills
   m_EditorClassIdentifier: 
   sceneToLoad:
-    _sceneName: rollingon
-    _scenePath: Assets/Scenes/rollingon.unity
-    _sceneBuildIndex: 3
-  stageNumber: 1
-  stageName: Rolling On
-  parTime: 30
-  nextStage: {fileID: 11400000, guid: 630c923fe7c308f41b1616f691ba565b, type: 2}
+    _sceneName: hills
+    _scenePath: Assets/Scenes/hills.unity
+    _sceneBuildIndex: 8
+  stageNumber: 2
+  stageName: Hills
+  parTime: 0
+  nextStage: {fileID: 11400000, guid: b4db6f250dabb9d48a6d148a6c20c966, type: 2}

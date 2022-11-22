@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 992c82bafb21d184da40ba5010ec412c, type: 3}
-  m_Name: 0-5 - theramp
+  m_Name: 0-4 - platforms
   m_EditorClassIdentifier: 
   sceneToLoad:
-    _sceneName: theramp
-    _scenePath: Assets/Scenes/theramp.unity
-    _sceneBuildIndex: 7
-  stageNumber: 5
-  stageName: The Ramp
+    _sceneName: platforms
+    _scenePath: Assets/Scenes/platforms.unity
+    _sceneBuildIndex: 9
+  stageNumber: 4
+  stageName: Platforms
   parTime: 0
-  nextStage: {fileID: 0}
+  nextStage: {fileID: 11400000, guid: 860d27e133d82234887e24c98a3967ed, type: 2}

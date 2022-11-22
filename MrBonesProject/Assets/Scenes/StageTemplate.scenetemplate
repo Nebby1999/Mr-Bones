@@ -13,20 +13,23 @@ MonoBehaviour:
   m_Name: StageTemplate
   m_EditorClassIdentifier: 
   templateScene: {fileID: 102900000, guid: 2aea16008ae497c40a6e3fcd0848d64d, type: 3}
-  templateName: 
-  description: 
+  templateName: Stage Boilerplate
+  description: A boilerplate for a stage for MrBones, contains the game ui, cinemachine
+    camera setup, and a stage controller.
   preview: {fileID: 0}
   dependencies:
   - dependency: {fileID: 11400000, guid: 003f6154c1d76d44a82bb9ef93323016, type: 2}
     instantiationMode: 1
-  - dependency: {fileID: 11400000, guid: df05351975f385c4a9f022d5d0901597, type: 2}
+  - dependency: {fileID: 2800000, guid: d8b272586db41414cbe819c22476ae63, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: be8e582dd4eae0042aa11a8f4ef14345, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: df05351975f385c4a9f022d5d0901597, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 8201b77a478f1de45bc137d56d4aff80, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 2fd6421f253b4ef1a19526541f9ffc0c, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 8300000, guid: cadcb1d4129a56f4982fe8146e44c1d0, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 3624499788001120022, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
@@ -42,7 +45,7 @@ MonoBehaviour:
   - dependency: {fileID: 8300000, guid: 1513ad1b0b87a844e975e1c6c8434782, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 8703645814579976434, guid: 10dec2f1db23d8346b86fde18f034717, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: a706505503c587f44801a788c82c1bc7, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 2ca1d0df91ccbc24f9876456c1b3bbde, type: 2}
@@ -50,7 +53,7 @@ MonoBehaviour:
   - dependency: {fileID: 11400000, guid: c13856791a7643a4a9d60183c341d069, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 29179ede7eb9bd645baa83926e07cc44, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 8b0e70741e368ae44a7889118c4cc794, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -58,7 +61,7 @@ MonoBehaviour:
   - dependency: {fileID: 2800000, guid: 95612dd73b4be754cb82abf5ce05b055, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: ee148e281f3c41c5b4ff5f8a5afe5a6c, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: d246cc49b6d9eb64085b23629cf6bc1a, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 6200000, guid: 84e50ee2cb2458f4b904771128593940, type: 2}
@@ -86,10 +89,12 @@ MonoBehaviour:
   - dependency: {fileID: 5909768818645709987, guid: 10bdd1a546de0fe4aaa248f1ed26ccd9, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 65a02dfe0db0ac14fb68d38cc2b96e6c, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 9100000, guid: e3aedabc751148f44afc9dd26f1cd190, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 40265a896a0f341bb956e90c59025a29, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 2100000, guid: 6c6bf630db9407c4fb48686727dfd152, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: b68f568fbdc78754683ac88b59e4ec80, type: 2}
     instantiationMode: 1
@@ -100,7 +105,7 @@ MonoBehaviour:
   - dependency: {fileID: 2800000, guid: 05022906f23e5f74497cefe9ac9ab6c5, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 8173773691103504056, guid: d1e7e2e99a10228458257fbc612757c1, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 8573c4c32e685d743abbd9148b474229, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 7400000, guid: 61002d63932bd9f4f93f8af33d096feb, type: 2}

@@ -19,4 +19,4 @@ MonoBehaviour:
   stageNumber: 7
   stageName: The Ramp
   parTime: 0
-  nextStage: {fileID: 0}
+  nextStage: {fileID: 11400000, guid: fa0d118ba29034d45ab4b67a09eca660, type: 2}

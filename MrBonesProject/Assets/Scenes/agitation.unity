@@ -1740,7 +1740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270478364, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_MaxWindowSize
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 704850433, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_IsTrigger
@@ -1848,11 +1848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757905357269530003, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6518154
+      value: -2.651824
       objectReference: {fileID: 0}
     - target: {fileID: 4757905357269530003, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5485616
+      value: -6.6037617
       objectReference: {fileID: 0}
     - target: {fileID: 4757905357287776521, guid: 6384fe74a3e0e9e40b2d625a90b24584, type: 3}
       propertyPath: m_Lens.OrthographicSize

@@ -21,15 +21,6 @@ namespace MrBones.UI
                 childTransform.gameObject.SetActive(true);
             }
         }
-        public void OnStartClicked()
-        {
-
-        }
-
-        public void OnControlsClicked()
-        {
-
-        }
 
         public void OnQuitClicked()
         {

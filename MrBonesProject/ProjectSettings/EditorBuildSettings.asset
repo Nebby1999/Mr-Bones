@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/platforms.unity
     guid: acb653310004cfd4db944dcf30966554
+  - enabled: 1
+    path: Assets/Scenes/thebox.unity
+    guid: b8838ae49d94e4940888a13d059c91a3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 77e25abc70d2df74b81a61d25e4f98d4, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 1a78e76be7c856149868f24c67fd86a8, type: 2}

@@ -12,11 +12,11 @@ namespace MrBones
         [Tooltip("Convers the rigidbody velocity to the amount of damage to deal to the breakable, 1 Velocitty = 1 velocityToBreakableStrength")]
         public float velocityToBreakableStrength;
 
-        public IBreakablesCollisionCallback[] Callbacks { get; private set; }
+        private IBreakerCallback[] breakerCallbacks = Array.Empty<IBreakerCallback>();
 
         private void Awake()
         {
-            Callbacks = GetComponents<IBreakablesCollisionCallback>();
+            breakerCallbacks = GetComponentsInChildren<IBreakerCallback>();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -24,38 +24,40 @@ namespace MrBones
             if (!canHarmBreakable)
                 return;
 
-            BreakableComponent breakableComponent = collision.gameObject.GetComponentFromRoot<BreakableComponent>();
+            IBreakable breakable = collision.gameObject.GetComponent<IBreakable>();
             
-            if(!breakableComponent)
+            if(breakable == null) //Not a breakable, return.
                 return;
 
             BreakablesCollisionInfo callbackInfo = new BreakablesCollisionInfo
             {
+                collision = collision,
                 breakerRigidbody = collision.otherRigidbody,
                 breakerObject = gameObject.GetRootGameObject(),
                 breakerComponent = this,
 
                 breakableRigidbody = collision.rigidbody,
-                breakableComponent = breakableComponent,
-                breakableObject = breakableComponent.GetRootGameObject(),
+                breakableComponent = breakable,
+                breakableObject = ((Component)breakable).gameObject,
             };
 
-            var fatal = breakableComponent.TakeDamage(callbackInfo);
-            
-            for(int i = 0; i < Callbacks.Length; i++)
+            var fatal = breakable.TakeDamage(callbackInfo);
+            for(int i = 0; i < breakerCallbacks.Length; i++)
             {
-                var callback = Callbacks[i];
-                callback.OnBreakablesCollision(callbackInfo);
+                IBreakerCallback callback = breakerCallbacks[i];
                 if(fatal)
                 {
                     callback.OnBreakableBroken(callbackInfo);
-                }  
+                    continue;
+                }
+                callback.OnBreakableCollision(callbackInfo);
             }
         }
     }
 
     public struct BreakablesCollisionInfo
     {
+        public Collision2D collision;
         public Vector2 BreakerVelocity => breakerRigidbody ? breakerRigidbody.velocity : Vector2.zero;
         public GameObject breakerObject;
         public Rigidbody2D breakerRigidbody;
@@ -64,13 +66,17 @@ namespace MrBones
         public Vector2 BreakableVelocity => breakableRigidbody ? breakableRigidbody.velocity : Vector2.zero;
         public GameObject breakableObject;
         public Rigidbody2D breakableRigidbody;
-        public BreakableComponent breakableComponent;
+        public IBreakable breakableComponent;
     }
 
-    public interface IBreakablesCollisionCallback
+    public interface IBreakerCallback //Callback for the breaker
     {
-        public void OnBreakablesCollision(BreakablesCollisionInfo collisionInfo);
+        public void OnBreakableCollision(BreakablesCollisionInfo collisionInfo)
+        {
+        }
 
-        public void OnBreakableBroken(BreakablesCollisionInfo collisionInfoThatBrokeTheBreakable);
+        public void OnBreakableBroken(BreakablesCollisionInfo collisionInfoThatBrokeTheBreakable)
+        {
+        }
     }
 }

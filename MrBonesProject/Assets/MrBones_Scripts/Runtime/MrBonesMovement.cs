@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 namespace MrBones
 {
     [RequireComponent(typeof(InputSimulator), typeof(Rigidbody2D), typeof(CharacterBody))]
-    public class MrBonesMovement : MonoBehaviour, IBreakablesCollisionCallback
+    public class MrBonesMovement : MonoBehaviour, IBreakerCallback
     {
         public InputSimulator InputSimulator { get; private set; }
         public Rigidbody2D Rigidbody2D { get; private set; }
@@ -173,7 +173,7 @@ namespace MrBones
             }
         }
 
-        public void OnBreakablesCollision(BreakablesCollisionInfo collisionInfo)
+        public void OnBreakableCollision(BreakablesCollisionInfo collisionInfo)
         {
         }
 

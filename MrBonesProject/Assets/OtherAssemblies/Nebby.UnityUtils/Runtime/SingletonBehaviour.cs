@@ -18,7 +18,8 @@ namespace Nebby
 
                 if (DestroyIfDuplicate)
                 {
-                    Destroy(this.gameObject);
+                    Destroy(gameObject);
+                    Destroy(this);
                     return;
                 }
             }

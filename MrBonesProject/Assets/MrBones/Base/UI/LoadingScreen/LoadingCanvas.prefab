@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 5554263348783256677}
   - component: {fileID: 7810230357549388024}
   - component: {fileID: 6007993893367351592}
-  - component: {fileID: 3668868948071454123}
+  - component: {fileID: 33719142}
   m_Layer: 5
   m_Name: MrBonesSpinning
   m_TagString: Untagged
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1387326111, guid: a706505503c587f44801a788c82c1bc7, type: 3}
+  m_Sprite: {fileID: -1448474861, guid: 9e928e7b3b43b0e419693683f95d1c92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -391,23 +391,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &3668868948071454123
-Animator:
-  serializedVersion: 4
+--- !u!114 &33719142
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8863743076878927435}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637533b17fc2e1f469a1daf9900a0e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useVector3ForRotation: 0
+  rotateX: 0
+  rotateY: 0
+  rotateZ: 1
+  speed: 360
+  rotationSpeed: {x: 0, y: 0, z: 0}

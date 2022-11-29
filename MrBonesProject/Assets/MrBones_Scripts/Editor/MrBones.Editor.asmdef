@@ -5,10 +5,7 @@
         "Nebby.CSharpUtils",
         "Nebby.UnityUtils.Editor",
         "Nebby.UnityUtils.Runtime",
-        "MrBones.Main",
-        "MrBones.Stages",
-        "MrBones.Pickups",
-        "MrBones.UI"
+        "MrBones"
     ],
     "includePlatforms": [
         "Editor"

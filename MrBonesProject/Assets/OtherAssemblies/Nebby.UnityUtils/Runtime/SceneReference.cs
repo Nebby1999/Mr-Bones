@@ -30,13 +30,13 @@ namespace Nebby
         public Scene LoadScene() => LoadScene(LoadSceneMode.Single);
         public Scene LoadScene(LoadSceneMode loadSceneMode)
         {
-            return SceneManager.LoadScene(_scenePath, new LoadSceneParameters(loadSceneMode));
+            return SceneManager.LoadScene(_sceneName, new LoadSceneParameters(loadSceneMode));
         }
 
         public AsyncOperation LoadSceneAsync() => LoadSceneAsync(LoadSceneMode.Single);
         public AsyncOperation LoadSceneAsync(LoadSceneMode loadSceneMode)
         {
-            return SceneManager.LoadSceneAsync(_scenePath, loadSceneMode);
+            return SceneManager.LoadSceneAsync(_sceneName, loadSceneMode);
         }
 
         public override string ToString()
@@ -46,6 +46,10 @@ namespace Nebby
 
         public bool Equals(SceneReference x, SceneReference y)
         {
+            if (x.SceneBuildIndex == -1 || y.SceneBuildIndex == -1)
+            {
+                return string.Equals(x.SceneName, y.SceneName, StringComparison.Ordinal);
+            }
             return x.SceneBuildIndex == y.SceneBuildIndex;
         }
 
@@ -56,7 +60,21 @@ namespace Nebby
 
         public bool Equals(SceneReference other)
         {
+            if (SceneBuildIndex == -1 || other.SceneBuildIndex == -1)
+            {
+                return string.Equals(SceneName, other.SceneName, StringComparison.Ordinal);
+            }
             return SceneBuildIndex == other.SceneBuildIndex;
+        }
+
+        public SceneReference()
+        {
+
+        }
+
+        public SceneReference(string sceneName)
+        {
+            _sceneName = sceneName;
         }
     }
 }

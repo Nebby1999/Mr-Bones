@@ -44,3 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d6b502d91a438459c35d4ab5cb25b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameLoadingSceneName:
+    _sceneName: loadingscene
+    _scenePath: Assets/Scenes/loadingscene.unity
+    _sceneBuildIndex: 0
+  _loadingFinishedScene:
+    _sceneName: mainmenu
+    _scenePath: Assets/Scenes/mainmenu.unity
+    _sceneBuildIndex: 1
+  _inbetweenScenesLoadingScene:
+    _sceneName: 
+    _scenePath: 
+    _sceneBuildIndex: -1

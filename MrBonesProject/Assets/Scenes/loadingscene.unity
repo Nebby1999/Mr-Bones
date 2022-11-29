@@ -123,29 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &33719140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8863743076878927435, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
-  m_PrefabInstance: {fileID: 5147010338382260418}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &33719142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33719140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 637533b17fc2e1f469a1daf9900a0e30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useVector3ForRotation: 0
-  rotateX: 0
-  rotateY: 0
-  rotateZ: 1
-  speed: 360
-  rotationSpeed: {x: 0, y: 0, z: 0}
 --- !u!1 &335807391
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 11d7aace58717b54c9c31f364a92ca25, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: f807863af89eee34dbfd66fdb2fcdd64, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -365,7 +342,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
-  m_DefaultActionMap: IngameInput
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!4 &1701043974
@@ -390,22 +367,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3668868948071454123, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 300559ea43f7cd844a7754f7fb65688b, type: 2}
-    - target: {fileID: 5554263348783256677, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554263348783256677, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554263348783256677, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7481482835265828638, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas

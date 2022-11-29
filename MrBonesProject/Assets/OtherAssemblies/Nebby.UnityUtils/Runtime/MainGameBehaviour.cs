@@ -12,7 +12,7 @@ namespace Nebby
     public abstract class MainGameBehaviour<T> : MonoBehaviour where T : MainGameBehaviour<T>
     {
         public static T Instance { get; protected set; }
-        public static bool loadStarted { get; private set; } = false;
+        public static bool LoadStarted { get; private set; } = false;
         public static event Action OnLoad;
         public static event Action OnStart;
         public static event Action OnUpdate;
@@ -20,8 +20,9 @@ namespace Nebby
         public static event Action OnLateUpdate;
         public static event Action OnShutdown;
 
-        public abstract string GameLoadingSceneName { get; }
-        public abstract string LoadingFinishedSceneName { get; }
+        [SerializeField] private SceneReference _gameLoadingSceneName;
+        [SerializeField] private SceneReference _loadingFinishedScene;
+        [SerializeField] private SceneReference _inbetweenScenesLoadingScene;
 
         protected virtual void Awake()
         {
@@ -33,16 +34,17 @@ namespace Nebby
             }
             Instance = this as T;
 
-            if(!loadStarted)
+            if(!LoadStarted)
             {
-                loadStarted = true;
+                LoadStarted = true;
+                SceneLoader.LoadingSceneName = _inbetweenScenesLoadingScene;
                 StartCoroutine(LoadGame());
             }
         }
 
         protected virtual IEnumerator LoadGame()
         {
-            loadStarted = true;
+            LoadStarted = true;
             SceneManager.sceneLoaded += (s, e) =>
             {
                 Debug.Log($"Loaded Scene {s.name} loadSceneMode={e}");
@@ -60,7 +62,7 @@ namespace Nebby
             //By ommiting this, we can load any scene and theoretically have entity states and the like running properly.
 #if UNITY_EDITOR
 #else
-            while(SceneManager.GetActiveScene().name != GameLoadingSceneName)
+            while(SceneManager.GetActiveScene().name != _gameLoadingSceneName.SceneName)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -79,7 +81,7 @@ namespace Nebby
             //By ommiting this, we can load any scene and theoretically have entity states and the like running properly.
 #if UNITY_EDITOR
 #else
-            SceneManager.LoadScene(LoadingFinishedSceneName);
+            _loadingFinishedScene.LoadScene();
 #endif
         }
 

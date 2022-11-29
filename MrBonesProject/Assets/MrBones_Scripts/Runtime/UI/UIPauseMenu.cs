@@ -17,6 +17,7 @@ namespace MrBones.UI
             if(StageController.Instance)
             {
                 StageController.Instance.Restart();
+                PauseManager.UnpauseGame();
                 return;
             }
             Debug.LogError("No stage controller instance");

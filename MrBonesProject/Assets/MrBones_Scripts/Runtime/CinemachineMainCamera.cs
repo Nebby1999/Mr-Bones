@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Nebby;
 
 namespace MrBones
 {
-    public class CinemachineMainCamera : MonoBehaviour
+    public class CinemachineMainCamera : SingletonBehaviour<CinemachineMainCamera>
     {
         public new Camera camera;
-        public CinemachineVirtualCamera virtualCamera;
+        public CinemachineVirtualCamera mainVirtualCamera;
+        public CinemachineVirtualCamera auxiliaryVirtualCamera;
 
-        public void Awake()
+        public void PanToObject(GameObject obj)
+        {
+            auxiliaryVirtualCamera.Follow = obj ? obj.transform : null;
+            auxiliaryVirtualCamera.enabled = obj;
+        }
+
+        private void Awake()
         {
             MrBonesSpirit.OnMrBonesSpawned += SetFollowLookAtTarget;
+        }
+
+        private void OnDestroy()
+        {
+            MrBonesSpirit.OnMrBonesSpawned -= SetFollowLookAtTarget;
         }
 
         private void SetFollowLookAtTarget(MrBonesSpirit obj)
@@ -22,10 +35,10 @@ namespace MrBones
                 return;
 
             var body = spirit.BodyObjectInstance;
-            if(body)
+            if (body)
             {
-                virtualCamera.LookAt = body.transform;
-                virtualCamera.Follow = body.transform;
+                mainVirtualCamera.LookAt = body.transform;
+                mainVirtualCamera.Follow = body.transform;
             }
         }
     }

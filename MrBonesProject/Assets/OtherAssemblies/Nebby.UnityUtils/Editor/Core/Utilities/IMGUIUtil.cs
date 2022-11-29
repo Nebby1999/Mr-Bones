@@ -53,6 +53,16 @@ namespace Nebby.Editor
             return new GUIContent(prop.displayName, prop.tooltip);
         }
 
+        public static bool ConditionalButton(bool condition, string text, string tooltip = null, Texture texture = null)
+        {
+            return ConditionalButton(() => condition, text, tooltip, texture);
+        }
+
+        public static bool ConditionalButton(bool condition, GUIContent label)
+        {
+            return ConditionalButton(() => condition, label);
+        }
+
         public static bool ConditionalButton(Func<bool> condition, string text, string tooltip = null, Texture texture = null)
         {
             return ConditionalButton(condition, new GUIContent(text, texture, tooltip));

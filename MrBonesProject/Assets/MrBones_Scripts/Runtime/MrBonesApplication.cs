@@ -7,9 +7,6 @@ namespace MrBones
 {
     public class MrBonesApplication : MainGameBehaviour<MrBonesApplication>
     {
-        public override string GameLoadingSceneName => "loadingscene";
-
-        public override string LoadingFinishedSceneName => "mainmenu";
 
         protected override IEnumerator LoadGameContent()
         {

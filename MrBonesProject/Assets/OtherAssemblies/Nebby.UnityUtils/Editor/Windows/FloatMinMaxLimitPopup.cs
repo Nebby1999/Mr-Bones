@@ -10,19 +10,27 @@ namespace Nebby.Editor.Windows
 {
     public class FloatMinMaxLimitPopup : PopupWindowContent
     {
-        public FloatMinMaxLimitPopup(SerializedProperty min, SerializedProperty max)
+        public FloatMinMaxLimitPopup(SerializedProperty minLimit, SerializedProperty maxLimit, SerializedProperty min, SerializedProperty max)
         {
+            minLimitProp = minLimit;
+            maxLimitProp = maxLimit;
             minProp = min;
             maxProp = max;
         }
+        SerializedProperty minLimitProp;
         SerializedProperty minProp;
         SerializedProperty maxProp;
+        SerializedProperty maxLimitProp;
         public override void OnGUI(Rect rect)
         {
             GUILayout.Label("Min Max Limits", EditorStyles.boldLabel);
-            minProp.floatValue = EditorGUILayout.FloatField("Min Limit", minProp.floatValue);
-            maxProp.floatValue = EditorGUILayout.FloatField("Max Limit", maxProp.floatValue);
-            minProp.serializedObject.ApplyModifiedProperties();
+            minLimitProp.floatValue = EditorGUILayout.FloatField("Min Limit", minLimitProp.floatValue);
+            maxLimitProp.floatValue = EditorGUILayout.FloatField("Max Limit", maxLimitProp.floatValue);
+
+            GUILayout.Label("Min and Max", EditorStyles.boldLabel);
+            minProp.floatValue = EditorGUILayout.FloatField("Min", minProp.floatValue);
+            maxProp.floatValue = EditorGUILayout.FloatField("Max", maxProp.floatValue);
+            minLimitProp.serializedObject.ApplyModifiedProperties();
         }
     }
 }

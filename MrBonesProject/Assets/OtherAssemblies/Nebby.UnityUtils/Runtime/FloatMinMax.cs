@@ -8,16 +8,8 @@ using UnityEngine;
 namespace Nebby
 {
     [Serializable]
-    public class FloatMinMax
+    public struct FloatMinMax
     {
-        public FloatMinMax()
-        {
-            min = 5;
-            max = 10;
-            minLimit = 0;
-            maxLimit = 15;
-        }
-
         public FloatMinMax(float minLimit, float maxLimit)
         {
             this.minLimit = minLimit;

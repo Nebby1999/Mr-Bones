@@ -81,7 +81,7 @@ MonoBehaviour:
   affectedByGravity: 0
   bobDelay: 1
   transformToBob: {fileID: 4824247577894708261}
-  bobDistance: {x: 0, y: 1, z: 0}
+  bobDistance: {x: 0, y: 0.5, z: 0}
 --- !u!58 &4641445623399493049
 CircleCollider2D:
   m_ObjectHideFlags: 0

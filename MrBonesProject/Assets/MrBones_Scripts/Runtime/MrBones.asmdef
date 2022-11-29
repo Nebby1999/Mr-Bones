@@ -1,5 +1,5 @@
 {
-    "name": "MrBones.Main",
+    "name": "MrBones",
     "rootNamespace": "MrBones",
     "references": [
         "Cinemachine",
@@ -10,7 +10,8 @@
         "Unity.TextMeshPro",
         "Unity.Timeline",
         "UnityEngine.UI",
-        "Nebby.UnityUtils.Runtime"
+        "Nebby.UnityUtils.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

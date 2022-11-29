@@ -4,7 +4,9 @@
     "references": [
         "Nebby.UnityUtils.Runtime",
         "Nebby.CSharpUtils",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Universal.Editor"
     ],
     "includePlatforms": [
         "Editor"

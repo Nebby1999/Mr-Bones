@@ -12,6 +12,7 @@ namespace MrBones
 		public CharacterSpirit Spirit { get; private set; }
 		public bool IsUsingMouseInput => PlayerInput.FindFirstPairedToDevice(Mouse.current) == PlayerInput;
 		public bool centerScreenMouseInput = true;
+		[SerializeField] private bool ignoreInput = false;
 		public static event Action<MrBonesSpirit> OnMrBonesSpawned;
 
 		private CharacterBody body;
@@ -66,28 +67,55 @@ namespace MrBones
 		}
 		public void OnMove(InputAction.CallbackContext context)
 		{
+			if(ignoreInput)
+            {
+				movementInput = Vector2.zero;
+				return;
+            }
+
 			movementInput = context.ReadValue<Vector2>();
 		}
 
 		public void OnAim(InputAction.CallbackContext context)
 		{
+			if(ignoreInput)
+            {
+				rawAimVector = Vector2.zero;
+				return;
+            }
 			rawAimVector = context.ReadValue<Vector2>();
 		}
 
 		public void OnHop(InputAction.CallbackContext context)
 		{
+			if (ignoreInput)
+            {
+                bodyInputs.jump.SetPhase(InputActionPhase.Disabled);
+                return;
+            }
 			InputActionPhase phase = context.phase;
 			bodyInputs.jump.SetPhase(phase);
 		}
 
 		public void OnBreak(InputAction.CallbackContext context)
 		{
+			if(ignoreInput)
+            {
+				bodyInputs.breaking.SetPhase(InputActionPhase.Disabled);
+				return;
+            }
 			InputActionPhase phase = context.phase;
 			bodyInputs.breaking.SetPhase(phase);
 		}
 
 		public void OnFire(InputAction.CallbackContext context)
 		{
+			if(ignoreInput)
+            {
+				bodyInputs.fireInput = 0;
+				bodyInputs.fire.SetPhase(InputActionPhase.Disabled);
+				return;
+            }
 			float fireInput = context.ReadValue<float>();
 			InputActionPhase phase = context.phase;
 			bodyInputs.fireInput = fireInput;
@@ -96,6 +124,11 @@ namespace MrBones
 
 		public void OnFire2(InputAction.CallbackContext context)
 		{
+			if (ignoreInput)
+            {
+				bodyInputs.fire2.SetPhase(InputActionPhase.Disabled);
+				return;
+            }
 			InputActionPhase phase = context.phase;
 			bodyInputs.fire2.SetPhase(phase);
 		}
@@ -104,6 +137,11 @@ namespace MrBones
         {
 			if (context.started)
 				PauseManager.Switch();
+        }
+
+		public void SetIgnoringInput(bool val)
+        {
+			ignoreInput = val;
         }
 
 		private void SetBody(GameObject newBody)

@@ -9,7 +9,23 @@ namespace MrBones
     public class StageController : SingletonBehaviour<StageController>
     {
         public StageDef tiedStage;
+        public bool hasShownMilkLocation;
+        public MilkPickup stageMilk;
         public TimerComponent Timer { get; private set; }
+        public override bool DestroyIfDuplicate => true;
+
+        public void Restart()
+        {
+            tiedStage.sceneToLoad.LoadScene();
+        }
+
+        public void OnMilkCollected()
+        {
+            GameObject newGO = new GameObject();
+            newGO.name = "StageController Destroyer";
+            transform.parent = newGO.transform;
+            StartCoroutine(StageCompleted());
+        }
 
         private void OnValidate()
         {
@@ -20,17 +36,46 @@ namespace MrBones
         }
         private void Awake()
         {
+            DontDestroyOnLoad(gameObject);
             Timer = GetComponent<TimerComponent>();
+
+            if(!Instance)
+                MrBonesSpirit.OnMrBonesSpawned += ShowMilkLoaction;
         }
 
-        public void Restart()
+        private void ShowMilkLoaction(MrBonesSpirit obj)
         {
-            tiedStage.sceneToLoad.LoadScene();
+            if(!hasShownMilkLocation)
+            {
+                hasShownMilkLocation = true;
+                StartCoroutine(ShowMilk(obj));
+                return;
+            }
+            obj.SetIgnoringInput(false);
         }
 
-        public void OnMilkCollected()
+        private void OnDestroy()
         {
-            StartCoroutine(StageCompleted());
+            MrBonesSpirit.OnMrBonesSpawned -= ShowMilkLoaction;
+        }
+
+        private IEnumerator ShowMilk(MrBonesSpirit spirit)
+        {
+            Timer.timeElapsed = 0;
+            Timer.enabled = false;
+            spirit.SetIgnoringInput(true);
+            
+            yield return new WaitForEndOfFrame();
+
+            CinemachineMainCamera.Instance.PanToObject(stageMilk.gameObject);
+
+            yield return new WaitForSeconds(2);
+
+            CinemachineMainCamera.Instance.PanToObject(null);
+
+            spirit.SetIgnoringInput(false);
+            Timer.enabled = true;
+            yield break;
         }
 
         private IEnumerator StageCompleted()

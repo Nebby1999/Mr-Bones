@@ -9,17 +9,5 @@ namespace Nebby
 {
     public static class Extensions
     {
-
-        public static Type[] GetTypesSafe(this Assembly assembly)
-        {
-            try
-            {
-                return assembly.GetTypes();
-            }
-            catch(ReflectionTypeLoadException e)
-            {
-                return e.Types.Where(t => t != null).ToArray();
-            }
-        }
     }
 }

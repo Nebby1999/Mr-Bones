@@ -10,6 +10,7 @@ namespace MrBones
     [RequireComponent(typeof(GenericPickupController))]
     public class GenericScorePickup : MonoBehaviour, IPickable
     {
+        public Color pickupColor;
         public uint scoreAmount;
 
         public bool ShouldGrantPickup(PickupInfo pickupInfo)
@@ -24,6 +25,7 @@ namespace MrBones
         {
             var scoreTracker = pickupInfo.pickerSpirit.GetComponent<ScoreTracker>();
             scoreTracker.AddScore(scoreAmount);
+            PickupParticleManager.Instance.DoBurst(pickupColor, transform.position);
         }
     }
 }

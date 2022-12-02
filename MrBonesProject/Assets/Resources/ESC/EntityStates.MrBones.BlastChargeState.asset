@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EntityStates.MrBones.BlastChargeState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.MrBones.BlastChargeState, MrBones.Main,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.MrBones.BlastChargeState, MrBones, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
     - fieldName: chargeGain

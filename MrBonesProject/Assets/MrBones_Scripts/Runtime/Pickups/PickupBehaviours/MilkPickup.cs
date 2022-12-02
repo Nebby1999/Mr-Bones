@@ -6,10 +6,9 @@ namespace MrBones
     [RequireComponent(typeof(GenericPickupController))]
     public class MilkPickup : MonoBehaviour, IPickable
     {
-        public UnityEngine.Events.UnityEvent onPickedUp;
         public void GrantPickupToPicker(PickupInfo pickupInfo)
         {
-            onPickedUp?.Invoke();
+            StageController.Instance.OnMilkCollected();
         }
 
         public bool ShouldGrantPickup(PickupInfo pickupInfo)

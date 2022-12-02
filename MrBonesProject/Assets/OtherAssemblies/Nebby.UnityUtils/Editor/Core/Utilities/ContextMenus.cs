@@ -31,6 +31,7 @@ namespace Nebby.Editor
 
             var field = typeof(ShadowCaster2D).GetField("m_ShapePath", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             field.SetValue(caster, collider.points.Select(v => (Vector3)v).ToArray());
+            EditorUtility.SetDirty(caster);
         }
 
         [MenuItem("CONTEXT/Light2D/Set Shape to Polygon Collider", true)]
@@ -49,6 +50,7 @@ namespace Nebby.Editor
 
             var field = typeof(Light2D).GetField("m_ShapePath", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             field.SetValue(caster, collider.points.Select(v => (Vector3)v).ToArray());
+            EditorUtility.SetDirty(caster);
         }
     }
 }

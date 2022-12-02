@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EntityStates.MrBones.ScreamState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.MrBones.ScreamState, MrBones.Main, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.MrBones.ScreamState, MrBones, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:

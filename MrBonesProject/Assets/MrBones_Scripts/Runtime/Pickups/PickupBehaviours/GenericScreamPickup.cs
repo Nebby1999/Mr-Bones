@@ -10,6 +10,7 @@ namespace MrBones
     [RequireComponent(typeof(GenericPickupController))]
     public class GenericScreamPickup : MonoBehaviour, IPickable
     {
+        public Color pickupColor;
         public float screamPowerRestored;
         public bool ShouldGrantPickup(PickupInfo pickupInfo)
         {
@@ -23,6 +24,7 @@ namespace MrBones
         {
             var screamComponent = pickupInfo.pickerObject.GetComponent<ScreamComponent>();
             screamComponent.CurrentScreamEnergy += screamPowerRestored;
+            PickupParticleManager.Instance.DoBurst(pickupColor, transform.position);
         }
     }
 }

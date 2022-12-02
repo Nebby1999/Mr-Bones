@@ -367,6 +367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6007993893367351592, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -704923701, guid: d8b4235579cf0a445ae5e291523a66e8, type: 3}
     - target: {fileID: 7481482835265828638, guid: dfaa7ae337f49d540bf14774b1df7b22, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas

@@ -7,7 +7,7 @@ namespace Nebby.Editor.PropertyDrawers
     [CustomPropertyDrawer(typeof(IntMinMax))]
     public class IntMinMaxDrawer : IMGUIPropertyDrawer
     {
-        int min, max;
+        float min, max;
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             SerializedProperty min = property.FindPropertyRelative("min");
@@ -24,8 +24,8 @@ namespace Nebby.Editor.PropertyDrawers
             EditorGUI.BeginProperty(position, label, property);
             Rect minMaxRect = new Rect(position.x, position.y, position.width - 10, position.height);
             EditorGUI.MinMaxSlider(minMaxRect, label, ref this.min, ref this.max, minLimit.floatValue, maxLimit.floatValue);
-            min.intValue = Mathf.Min(Mathf.FloorToInt(this.min);
-            max.intValue = Mathf.CeilToInt(this.max);
+            min.intValue = Mathf.Min(Mathf.FloorToInt(this.min), min.intValue);
+            max.intValue = Mathf.Max(Mathf.CeilToInt(this.max), max.intValue);
 
             var contextRect = new Rect(minMaxRect.xMax, position.y, 10, position.height);
             EditorGUI.DrawTextureTransparent(contextRect, AssetLocator.ContextMenuIndicator, ScaleMode.ScaleToFit);

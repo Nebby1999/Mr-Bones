@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectedByGravity: 0
   bobDelay: 1
-  transformToBob: {fileID: 4824247577894708261}
+  transformToBob: {fileID: 4038200593349123446}
   bobDistance: {x: 0, y: 0.5, z: 0}
 --- !u!58 &4641445623399493049
 CircleCollider2D:

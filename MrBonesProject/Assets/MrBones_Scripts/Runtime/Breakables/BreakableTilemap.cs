@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 namespace MrBones
@@ -47,6 +48,11 @@ namespace MrBones
                         }
                     }
                 }
+            }
+            var shadowcaster = GetComponent<ShadowCaster2D>();
+            if(shadowcaster)
+            {
+                Destroy(shadowcaster);
             }
             Collider.ProcessTilemapChanges();
             return true;

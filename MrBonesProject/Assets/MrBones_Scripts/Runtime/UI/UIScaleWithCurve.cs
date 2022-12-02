@@ -10,8 +10,8 @@ namespace MrBones
         public AnimationCurve scaleCurve;
         public bool scaleOnStart;
 
+        public bool Scaling { get; private set; }
         private float timer;
-        private bool scaling = false;
         private Transform t;
         private Keyframe firstFrame;
         private Keyframe lastFrame;
@@ -25,27 +25,23 @@ namespace MrBones
         private void Start()
         {
             if (scaleOnStart)
-                scaling = true;
+                Scaling = true;
         }
 
-        public void BeginScaling(bool reverse)
+        public void BeginScaling()
         {
-            scaling = true;
-            if(reverse)
-            {
-                timer = lastFrame.time;
-            }
+            Scaling = true;
         }
 
         public void StopScaling()
         {
-            scaling = false;
+            Scaling = false;
             timer = 0;
         }
 
         private void Update()
         {
-            if(scaling)
+            if(Scaling)
             {
                 timer += Time.deltaTime;
                 float val = scaleCurve.Evaluate(timer);

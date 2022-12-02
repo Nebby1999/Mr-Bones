@@ -16,6 +16,12 @@ namespace MrBones.UI
         [SerializeField] private GridLayoutGroup gridLayoutForButtons;
         [SerializeField] private StageDef[] allStages;
 
+        private GameObject sceneTransition;
+
+        private void Awake()
+        {
+            sceneTransition = Resources.Load<GameObject>("LoadingTransition");
+        }
         private void Start()
         {
             Transform gridLayoutTransform = gridLayoutForButtons.transform;
@@ -32,7 +38,9 @@ namespace MrBones.UI
 
         public void LoadStage(StageDef stageToLoad)
         {
-            stageToLoad.sceneToLoad.LoadScene();
+            UIStageTransition stageTransition = Instantiate(sceneTransition).GetComponent<UIStageTransition>();
+            DontDestroyOnLoad(stageTransition.gameObject);
+            stageTransition.DoTransition(stageToLoad.sceneToLoad);
         }
     }
 }

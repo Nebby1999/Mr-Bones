@@ -2,6 +2,7 @@
 using UnityEngine;
 using Nebby;
 using UnityEngine.SceneManagement;
+using MrBones.UI;
 
 namespace MrBones
 {
@@ -14,6 +15,8 @@ namespace MrBones
         public TimerComponent Timer { get; private set; }
         public override bool DestroyIfDuplicate => true;
 
+        private GameObject stageTransitionPrefab;
+
         public void Restart()
         {
             tiedStage.sceneToLoad.LoadScene();
@@ -24,7 +27,10 @@ namespace MrBones
             GameObject newGO = new GameObject();
             newGO.name = "StageController Destroyer";
             transform.parent = newGO.transform;
-            StartCoroutine(StageCompleted());
+
+            UIStageTransition stageTransition = Instantiate(stageTransitionPrefab).GetComponent<UIStageTransition>();
+            DontDestroyOnLoad(stageTransition.gameObject);
+            stageTransition.DoTransition(tiedStage.nextStage ? tiedStage.nextStage.sceneToLoad : SceneReference.Null);
         }
 
         private void OnValidate()
@@ -36,6 +42,7 @@ namespace MrBones
         }
         private void Awake()
         {
+            stageTransitionPrefab = Resources.Load<GameObject>("LoadingTransition");
             DontDestroyOnLoad(gameObject);
             Timer = GetComponent<TimerComponent>();
 
@@ -69,29 +76,13 @@ namespace MrBones
 
             CinemachineMainCamera.Instance.PanToObject(stageMilk.gameObject);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
 
             CinemachineMainCamera.Instance.PanToObject(null);
 
             spirit.SetIgnoringInput(false);
             Timer.enabled = true;
             yield break;
-        }
-
-        private IEnumerator StageCompleted()
-        {
-            if (tiedStage.nextStage)
-            {
-                var op = tiedStage.nextStage.sceneToLoad.LoadSceneAsync();
-                while (!op.isDone)
-                {
-                    yield return new WaitForEndOfFrame();
-                }
-            }
-            else
-            {
-                SceneManager.LoadScene("mainmenu");
-            }
         }
     }
 }

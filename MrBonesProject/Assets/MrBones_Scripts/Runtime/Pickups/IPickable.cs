@@ -10,6 +10,7 @@ namespace MrBones
     public struct PickupInfo
     {
         public IPickable pickableObject;
+        public GenericPickupController controller;
         public GameObject pickerObject;
         public CharacterBody pickerBody;
         public CharacterSpirit pickerSpirit;

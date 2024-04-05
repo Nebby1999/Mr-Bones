@@ -4997,6 +4997,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickUpSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ed3f821807da7b4b89b9da3327a115a, type: 2}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.g
+      value: 0.38431376
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.r
+      value: 0.38431376
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
       propertyPath: transformToBob
       value: 
       objectReference: {fileID: 0}

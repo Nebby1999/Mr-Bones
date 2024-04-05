@@ -27,7 +27,7 @@ namespace MrBones
             GameObject newGO = new GameObject();
             newGO.name = "StageController Destroyer";
             transform.parent = newGO.transform;
-
+            
             UIStageTransition stageTransition = Instantiate(stageTransitionPrefab).GetComponent<UIStageTransition>();
             DontDestroyOnLoad(stageTransition.gameObject);
             stageTransition.DoTransition(tiedStage.nextStage ? tiedStage.nextStage.sceneToLoad : SceneReference.Null);

@@ -15,6 +15,8 @@ namespace MrBones
         public Tilemap Tilemap { get; private set; }
         public TilemapCollider2D Collider { get; private set; }
 
+        public UnityEngine.Events.UnityEvent onTileBroken;
+
         private void Awake()
         {
             Tilemap = GetComponent<Tilemap>();
@@ -43,6 +45,7 @@ namespace MrBones
                                 if(collider.gameObject == gameObject)
                                 {
                                     Tilemap.SetTile(Tilemap.WorldToCell(checkCellPos), null);
+                                    onTileBroken?.Invoke();
                                 }
                             }
                         }

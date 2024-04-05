@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 6634630449836553292}
   - component: {fileID: 2135904842057859606}
   - component: {fileID: 7184892000554518555}
-  - component: {fileID: 3248191755683948407}
+  - component: {fileID: 416173141846293800}
   m_Layer: 0
   m_Name: QUIT
   m_TagString: Untagged
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3248191755683948407
+--- !u!114 &416173141846293800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 491494734641743862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 58688cf8af403f049aa09b2089a783d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5112698040695623972}
-        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones.UI
+        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones
         m_MethodName: OnQuitClicked
         m_Mode: 1
         m_Arguments:
@@ -412,6 +412,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  clickSound: {fileID: 11400000, guid: 3f8b7c43e47755143a760d0c78be1407, type: 2}
 --- !u!1 &522736540059551640
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +734,7 @@ GameObject:
   - component: {fileID: 8884924017898261479}
   - component: {fileID: 6284938562021352560}
   - component: {fileID: 3390958952518966150}
-  - component: {fileID: 1678513662043651509}
+  - component: {fileID: 5219988914363776636}
   m_Layer: 0
   m_Name: START
   m_TagString: Untagged
@@ -800,7 +801,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1678513662043651509
+--- !u!114 &5219988914363776636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -809,7 +810,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2675877533806557333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 58688cf8af403f049aa09b2089a783d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -823,7 +824,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -845,7 +846,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5112698040695623972}
-        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones.UI
+        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones
         m_MethodName: ChangeMenu
         m_Mode: 5
         m_Arguments:
@@ -856,6 +857,7 @@ MonoBehaviour:
           m_StringArgument: LevelSelector
           m_BoolArgument: 0
         m_CallState: 2
+  clickSound: {fileID: 11400000, guid: 3f8b7c43e47755143a760d0c78be1407, type: 2}
 --- !u!1 &3015340074062094585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2357,7 @@ GameObject:
   - component: {fileID: 5290951976658278898}
   - component: {fileID: 193980161449041919}
   - component: {fileID: 8687271392018330663}
-  - component: {fileID: 5129507686316542061}
+  - component: {fileID: 4616175704435492630}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -2422,7 +2424,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5129507686316542061
+--- !u!114 &4616175704435492630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2431,7 +2433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7788209796384227235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 58688cf8af403f049aa09b2089a783d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -2467,7 +2469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5112698040695623972}
-        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones.UI
+        m_TargetAssemblyTypeName: MrBones.UI.UIMainMenu, MrBones
         m_MethodName: ChangeMenu
         m_Mode: 5
         m_Arguments:
@@ -2478,6 +2480,7 @@ MonoBehaviour:
           m_StringArgument: TitleScreen
           m_BoolArgument: 0
         m_CallState: 2
+  clickSound: {fileID: 11400000, guid: 3f8b7c43e47755143a760d0c78be1407, type: 2}
 --- !u!1 &7994851661870541523
 GameObject:
   m_ObjectHideFlags: 0

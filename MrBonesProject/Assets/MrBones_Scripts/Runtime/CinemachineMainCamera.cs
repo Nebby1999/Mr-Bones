@@ -11,6 +11,7 @@ namespace MrBones
         public new Camera camera;
         public CinemachineVirtualCamera mainVirtualCamera;
         public CinemachineVirtualCamera auxiliaryVirtualCamera;
+        public bool zoomIn;
 
         public void PanToObject(GameObject obj)
         {
@@ -27,6 +28,7 @@ namespace MrBones
         {
             MrBonesSpirit.OnMrBonesSpawned -= SetFollowLookAtTarget;
         }
+
 
         private void SetFollowLookAtTarget(MrBonesSpirit obj)
         {

@@ -18,6 +18,7 @@ namespace MrBones
 
 
         public UnityEvent onBreak;
+        public UnityEvent onTakeDamage;
 
 
         private void Awake()
@@ -38,6 +39,7 @@ namespace MrBones
                 Break(info);
                 return true;
             }
+            onTakeDamage?.Invoke();
             return false;
         }
 

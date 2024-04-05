@@ -140,6 +140,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickUpSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cbcb66e07512964cadb23956edaa675, type: 2}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.g
+      value: 0.43921572
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.r
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
       propertyPath: transformToBob
       value: 
       objectReference: {fileID: 1451844241488745823}
@@ -183,5 +199,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f84f5781f7190a4e88fe61733e3ecdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupColor: {r: 0.627451, g: 0.43921572, b: 0, a: 1}
   screamPowerRestored: 1

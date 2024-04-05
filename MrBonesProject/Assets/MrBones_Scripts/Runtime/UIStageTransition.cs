@@ -29,6 +29,7 @@ namespace MrBones.UI
         {
             PauseManager.canPause = false;
             SceneRestarter.canRestart = false;
+
             scaler.BeginScaling();
 
             while (scaler.Scaling)

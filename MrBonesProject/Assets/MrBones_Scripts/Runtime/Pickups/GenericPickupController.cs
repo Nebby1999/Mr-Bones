@@ -16,6 +16,8 @@ namespace MrBones
         [Tooltip("If null, the transform to bob will be the transform attached to this behaviour")]
         public Transform transformToBob;
         public Vector3 bobDistance = Vector3.zero;
+        public Color pickupColor;
+        public SoundDef pickUpSound;
         private Vector3 initialPos;
 
         private void Awake()
@@ -70,6 +72,7 @@ namespace MrBones
             if (PickableBehaviour != null && PickableBehaviour.ShouldGrantPickup(pickupInfo))
             {
                 PickableBehaviour.GrantPickupToPicker(pickupInfo);
+                GameEventManager.Instance?.OnPickup(pickupInfo);
                 Destroy(gameObject);
             }
         }
@@ -78,6 +81,7 @@ namespace MrBones
         {
             var pickupInfo = new PickupInfo();
             pickupInfo.pickableObject = PickableBehaviour;
+            pickupInfo.controller = this;
             pickupInfo.pickerObject = pickerRoot;
             var body = pickerRoot.GetComponent<CharacterBody>();
             pickupInfo.pickerBody = body;

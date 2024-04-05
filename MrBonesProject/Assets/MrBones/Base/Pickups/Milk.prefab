@@ -136,6 +136,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickUpSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 77698ae98c287ab41ba664cb446688f6, type: 2}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.b
+      value: 0.8980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.g
+      value: 0.8980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
+      propertyPath: pickupColor.r
+      value: 0.8980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596708426832546004, guid: 28759f94ac504e94fac814c13b4216db, type: 3}
       propertyPath: transformToBob
       value: 
       objectReference: {fileID: 2408331775704160718}
@@ -167,6 +183,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90c7333f8b2f1f44a752ee1d6d5125b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickedUp:
-    m_PersistentCalls:
-      m_Calls: []

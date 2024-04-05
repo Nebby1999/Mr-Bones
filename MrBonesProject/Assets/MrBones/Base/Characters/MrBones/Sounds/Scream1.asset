@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 55ce1857c22ee264a8a2ab528895b29a, type: 3}
   looping: 1
+  audioMixer: {fileID: -1632505256504678402, guid: ca31706535506fd428a804ca5939bad3, type: 2}
   volume:
     min: 1
-    max: 9.999999
+    max: 2
     minLimit: 1
     maxLimit: 2
   pitch:

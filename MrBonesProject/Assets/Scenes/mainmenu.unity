@@ -285,7 +285,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MrBonesApplication
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4337008549606974408, guid: 10bdd1a546de0fe4aaa248f1ed26ccd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10bdd1a546de0fe4aaa248f1ed26ccd9, type: 3}
 --- !u!4 &2125063918455970417
 Transform:
@@ -332,7 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 6019833248968643591}
-  virtualCamera: {fileID: 0}
+  mainVirtualCamera: {fileID: 0}
+  auxiliaryVirtualCamera: {fileID: 0}
 --- !u!4 &4851704062288645242
 Transform:
   m_ObjectHideFlags: 0
